@@ -1,5 +1,4651 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-    margin: 0;
-    background: ghostwhite;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/**Tribe Custom Code**/
+.topnav {
+    background-color: navy;
+    overflow: hidden;
+}
+
+
+/***********************CustomCode*****************************/
+
+html{
+    font-family: 'Halis GR', Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+/************************************************Styling*/
+h1{
+    font-weight: 900;
+    font-size: 50px;
+}
+
+h2{
+    font-weight: 900;
+    font-size: 30px;
+}
+
+h3{
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 150%;
+}
+
+h4{
+    font-weight: 525;
+    font-size: 20px;
+}
+
+h5{
+    font-weight: 400;
+    font-size: 14px;
+}
+
+p{
+    font-weight: 300;
+    font-size: 1.125em;
+    line-height: 150%;
+    word-spacing: .5px;
+    color: black;
+}
+
+
+a{
+    line-height: 140%;
+    font-weight: 200;
+    font-size: 1em;
+}
+
+/*for email input*/
+textarea[type="text"]{
+    font-size: 1em;
+    padding-left: 6px;
+    width: 42vh;
+    height: 22px;
+    border-radius: 7px;
+    resize: none;
+    border: .5px solid gray;
+}
+
+/*for "long answer" text input*/
+textarea[type="text"]{
+    font-size: 1em;
+    padding-left: 6px;
+    line-height: 140%;
+}
+
+
+
+body.roster ::-webkit-scrollbar {
+  width: 12px;    
+}
+
+/* Track */
+body.roster ::-webkit-scrollbar-track {
+  background: transparent; 
+  border-radius: 6px;
+}
+
+/* Handle */
+body.roster ::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.5);
+  border-radius: 6px;
+
+}
+
+/* Handle on hover */
+body.roster ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,.75); 
+}
+
+
+
+
+body.roster div.rosterCard ::-webkit-scrollbar {
+  width: 3px;    
+}
+
+/* Track */
+body.roster div.rosterCard ::-webkit-scrollbar-track {
+  background: rgba(50,50,50,.5); 
+  border-radius: 1px;
+}
+
+/* Handle */
+body.roster div.rosterCard ::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.5);
+  border-radius: 1px;
+
+}
+
+/* Handle on hover */
+body.roster div.rosterCard ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,.75); 
+}
+
+
+
+
+body.harmful ::-webkit-scrollbar {
+  width: 12px;    
+}
+
+/* Track */
+body.harmful ::-webkit-scrollbar-track {
+  background: transparent; 
+  border-radius: 6px;
+}
+
+/* Handle */
+body.harmful ::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.5);
+  border-radius: 6px;
+
+}
+
+/* Handle on hover */
+body.harmful ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,.75); 
+}
+
+
+
+
+body.media ::-webkit-scrollbar {
+  width: 6px;    
+}
+
+/* Track */
+body.media ::-webkit-scrollbar-track {
+  background: transparent; 
+  border-radius: 3px;
+}
+
+/* Handle */
+body.media ::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.5);
+  border-radius: 3px;
+
+}
+
+/* Handle on hover */
+body.media ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,.75); 
+}
+
+
+
+
+
+
+/************************************************Header*/
+
+body{
+/*
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+*/
+}
+
+header{
+    position: absolute;
+    display: flex;
+    width: 90%;
+    margin-left: 1%;
+    margin-top: 1%;
+    z-index: 10000;
+}
+
+header a, div{
+    display: inline-block;
+}
+
+/*block of page links*/
+header div{
+    width: 100%;
+    margin-left: 3%;
+    margin-top: .75%;
+}
+
+/*the individual page links*/
+header div a{
+    text-decoration: none;
+    margin-right: 3.25%;
+    font-weight: 200;
+    opacity: .85;
+    position: relative;
+}
+
+/*hover effect for individual page links*/
+header > div> a:hover{
+    color: white;
+}
+
+/*reference: https://codepen.io/mehi/pen/MyWqPM*/
+/*effect for hover with line, this currently has green bottom*/
+header div a:after{
+    content: '';
+    position: absolute;
+    width: 0; height: 4px;
+    display: block;
+    margin-top: 2px;
+    right: 0;
+    background: #010039;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;
+}
+
+header > div > a:hover:after{
+    width: 100%;
+    left: 0;
+    background: #010039;  
+}
+
+
+/*yuk face home icon, intial starting spot and transition*/
+header > a > img{
+    transition: .25s;
+}
+
+/*hover effect for yuk face home icon*/
+header > a > img:hover{
+    transform:rotate(30deg);
+    transition: .5s;
+    background-color: transparent;
+}
+
+
+/*dark header nav link color for light backgrounds*/
+header.greyBack > div > a{
+    color: #434343;
+}
+
+.mobileMenu{
+    display: none;
+}
+
+
+
+
+/************************************************Homepage*/
+
+
+/*makes each photo fade away*/
+.animationFade{
+    opacity: 0;
+    transition: .75s;
+}
+
+/*completely turns an image off*/
+.animationOFF{
+    display: none;
+}
+
+/*begins the show*/
+.animationBegin{
+    opacity: 1;
+    display: block;
+}
+
+
+/*image container*/
+.imageSandBox{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#yukTrigger:hover{
+    cursor: pointer;
+}
+
+
+
+
+/*image within container*/
+#pageLoadEffect > section > .imageSandBox > img{
+    position: relative;
+    object-fit: cover;
+    transition: .5s;
+
+}
+
+/*Gu layoutD blurred*/
+#imgAni1a{
+    height: 270%;
+    width: 270%;
+    object-position: -1800px -700px;
+    animation-name: zoomOutFromRight;
+    animation-delay: 0s;
+    animation-duration: 3.5s;
+    animation-timing-function: cubic-bezier(0,1.31,.95,.74);
+    z-index: 10;
+}
+
+/*Eric layout alternate blurred*/
+#imgAni1b{
+    height: 270%;
+    width: 270%;
+    object-position: -1800px 60%;
+    animation-name: zoomOutFromRightx2;
+    animation-delay: 0s;
+    animation-duration: 4s;
+    animation-timing-function: cubic-bezier(0,1.31,.95,.74);
+    z-index: 10;
+}
+
+/*Gu layoutD clear*/
+#imgAni2a{
+    height: 270%;
+    width: 270%;
+    object-position: -1800px -700px;
+    animation-name: zoomOutFromRight;
+    animation-delay: 0s;
+    animation-duration: 4s;
+    animation-timing-function: cubic-bezier(0,1.31,.95,.74);
+    z-index: 9;
+}
+
+/*Eric layout alternate*/
+#imgAni2b{
+    height: 270%;
+    width: 270%;
+    object-position: -1800px 60%;
+    animation-name: zoomOutFromRightx2;
+    animation-delay: 0s;
+    animation-duration: 4s;
+    animation-timing-function: cubic-bezier(0,1.31,.95,.74);
+    z-index: 9;
+}
+
+/*high five line after showcase game*/
+#imgAni3{
+    height: 110%;
+    width: 110%;
+    object-position: -100px -100px;
+    animation-name: slideFromLtoRtoL;
+    animation-delay: 2.25s;
+    animation-duration: 2.5s;
+    animation-timing-function: cubic-bezier(0.22, .9, 0.22, 1);
+    z-index: 8;
+}
+
+/*pool noodle sideline on gesling*/
+#imgAni4{
+    height: 140%;
+    width: 140%;
+    object-position: -300px -25px;
+    animation-name: slightPanOver;
+    animation-delay: 2.5s;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    z-index: 7;
+    transition: 2s;
+}
+
+/*https://easings.net/en#*/
+/*GET SOME, the classic shot*/
+#imgAni5{
+    height: 250%;
+    width: 200%;
+    bottom: 0;
+    left: 0;
+    object-position: 0px 0px;
+    animation-name: panOut;
+    animation-delay: 5s;
+    animation-duration: 4s;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    z-index: 6;  
+}
+
+/*extra help in positioning that last photo*/
+#pageLoadEffect > section > .imageSandBox > #imgAni5{
+    position: absolute;
+}
+
+
+/*for image 1 and 2 Gu catch*/
+@keyframes zoomOutFromRight{
+    0%{
+        height: 270%;
+        width: 270%;
+        object-position: -1800px -700px;
+    } 
+    
+    60%{
+        height: 100%;
+        width: 100%;
+        object-position: 10px 0px; 
+    }    
+
+    100%{
+        height: 100%;
+        width: 100%;
+        object-position: 1800px 0px; 
+    }
+}
+
+/*for image 1 and 2 Eric catch*/
+@keyframes zoomOutFromRightx2{
+    0%{
+        height: 270%;
+        width: 270%;
+        object-position: -1800px 60%;
+    } 
+    
+    60%{
+        height: 100%;
+        width: 100%;
+        object-position: 10px 100%; 
+    }    
+
+    100%{
+        height: 100%;
+        width: 100%;
+        object-position: 1800px 100%; 
+    }
+}
+
+/*for social image, high five line*/
+@keyframes slideFromLtoRtoL{
+    0%{
+        object-position: -1265px 0px;
+    }
+    
+    45%{
+        object-position: 0px 0px;
+    }
+    
+    100%{
+        object-position: -1800px 0px;
+    }
+}
+
+
+/*from right to left*/
+@keyframes slightPanOver{
+    0%{
+        width: 140%;
+        height: 140%;
+        object-position: -400px -50px;
+    }
+    
+    100%{
+        width: 105%;
+        height: 105%;
+        object-position: 25px 0px;
+    }
+}
+
+
+/*from down left to upper right, GET SOME*/
+@keyframes panOut{
+    0%{
+        height: 250%;
+        width: 200%;
+        bottom: 0;
+        left: 0;
+        object-position: 0px 0px;
+    }
+    
+    100%{
+        height: 135%;
+        width: 120%;
+        bottom: 0;
+        object-position: -100px 0px;
+        left: 0;
+    }
+}
+
+
+
+
+body.index{
+/*
+    scroll-snap-align: start;
+    scroll-snap-type: proximity;
+    scroll-snap-type: y proximity;
+*/
+}
+
+main{
+    height: 100vh;
+    overflow: hidden;
+/*    scroll-snap-align: start;*/
+}
+
+/*Splash photos for each page, generalized*/
+main img.mainPhoto{
+    width: 100%;
+    height: 100%;
+    display: relative;
+    object-fit: cover;
+    display: block;
+}
+
+/*photo of Eric*/
+body.index main img.mainPhoto{
+    object-position: 0% 80%;
+}
+
+/*photo of Gu*/
+body.index main img.mainPhoto:nth-of-type(2){
+    display: block;
+    object-position: 20% 10%;
+}
+
+.photoCredit{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    color: white;
+    font-size: 10px;
+    opacity: .4;
+}
+
+@keyframes slideInFar{
+    0%{
+        transform: translateX(-150px) skewX(20deg);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: translateX(0) skewX(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes wobble{
+    0%{
+        transform: skewX(5deg) rotate(-5deg); 
+    }
+    
+    20%{
+        transform: skewX(3deg) rotate(-15deg);
+    }
+    
+    40%{
+        transform: skewX(-3deg) rotate(10deg);
+    }
+    
+    60%{
+        transform: skewX(2deg) rotate(-10deg);
+    }
+    
+    80%{
+        transform: skewX(-1deg) rotate(4deg);
+    }
+    
+    100%{
+        transform: skewX(0deg) rotate(0deg);
+    }
+}
+
+/*container for yuk face & titles*/
+main > section.titleInfo{
+    position: absolute;
+    top: 0;
+    margin-left: 6.5%;
+    margin-top: 8.25%;
+    height: 20%;
+    animation: 3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 slideInFar;
+}
+
+/*container for yuk face*/
+main > section.titleInfo > aside{
+    display: inline-block;
+    width: 10%;
+    margin-top: .875%;
+    vertical-align: middle;
+}
+
+/*the literal yuk face*/
+main aside img.yukFace{
+    position: relative;
+    width: 100%;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    transition: .5s;
+    animation: 3.5s ease-out 0s .5 wobble;
+}
+
+/*standard hover effect fun time*/
+main aside img.yukFace:hover{
+    transform: scale(1.125);
+    -webkit-transform: scale(1.125);
+    transition: .25s;
+}
+
+/*container with h1 main ttile and h5 lower title*/
+body.index > main > section.titleInfo > div{
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    top: unset;
+    left: unset;
+    right: unset;
+    margin-left: 2%;
+    text-align: left;
+    vertical-align: middle;
+    animation: none;
+}
+
+/*"Mr. Yuk" main title*/
+body main h1{
+    position: relative;
+    display: block;
+    color: white;
+    margin-bottom: 2%;
+}
+
+/*"Carnegie Mellon Men's Ultimate" title*/
+body.index main h5{
+    position: relative;
+    display: block;
+    color: white;
+    margin-left: .5%;
+    letter-spacing: 0.0625em;
+}
+
+
+/*holding container for yuk face + white circle*/
+#circleBox{
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+/*the white circle of expansion*/
+span.whiteCircle{
+    position: absolute;
+    top: 25.5%;
+    left: 11.25%;
+    background-color: white;
+    opacity: .4s; 
+    height: 0px;
+    width: 0px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    z-index: 20;
+}
+
+
+@keyframes slideUp{
+    0%{
+        transform: translateY(500px);
+    }
+    
+    80%{
+        transform: translateY(-30px);
+    }
+    
+    90%{
+        transform: translateY(10px);
+    }
+    
+    100%{
+        transform: translateY(0);
+    }
+}
+
+/*main CTA buttons and the word "or" inbetween them*/
+body.index main div{
+    position: absolute;
+    top: 80%;
+    left: 0;
+    right: 0;
+    display: block;
     text-align: center;
+    animation: 2.75s cubic-bezier(0.645, 0.045, 0.355, 1) 0s 1 slideUp;
+
+}
+
+
+#emailListButton:hover{
+    cursor: pointer;
+}
+
+#highlightsButton:hover{
+    cursor: pointer;
+}
+
+/*making sure buttons & "or" are all in line*/
+body.index main div a, p{
+    display: inline-block;
+}
+
+/*spacing around the word "or"*/
+body.index main div p{
+    display: inline-block;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+/*outline white text button*/
+.buttonOutline{
+    font-size: 16px;
+    font-weight: 200;
+    text-decoration: none;
+    color: white;
+    border: 1.5px solid white; 
+    background-color: Transparent;
+    border-radius: 30px; 
+    padding: 8px 35px 8px 35px;
+    transform:scale(1);
+    transition: .25s;
+}
+
+/*solid white, green text button*/
+.buttonSolid{
+    font-size: 16px;
+    font-weight: 200;
+    text-decoration: none;
+    color: #010039;
+    border: 1.5px solid white; 
+    background-color: white;
+    border-radius: 30px; 
+    padding: 8px 35px 8px 35px;
+    transform:scale(1);
+    transition: .25s;
+    animation: .75s cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 hoverButtonOFF;
+
+}
+
+
+.buttonSquared{
+    border-radius: 11px;
+}
+
+
+a.buttonOutline:hover, a.buttonSolid:hover{
+    transform:scale(1.05);
+    transition: .1375s;
+}
+
+
+section.bio{
+/*    scroll-snap-align: start;*/
+    position: relative;
+    height: 100vh;
+}
+
+/*bio left side*/
+section.bio aside{
+    position: absolute;
+    background-color: #F4F4F4;
+    height: 100vh;
+    width: 33.4%;
+    z-index: 1;
+}
+
+/*left title "what is mr yuk?"*/
+section.bio aside h3{
+    opacity: .7;
+    text-align: right;
+    margin-right: 14%;
+}
+
+/*left title, top spacing, by just moving the first title down*/
+section.bio aside h3:nth-of-type(1){
+    margin-top: 9.825vw;
+}
+
+/*bio right side, the green side*/
+section.bio section{
+    position: absolute;
+    width: 66.66%;
+    right: 0;
+    overflow: hidden;
+}
+
+/*bio right image*/
+section.bio section img{
+    float: right;
+    height: 100vh;
+    object-fit: cover;
+    transition: 3s;
+}
+
+/*text and button on right side of bio*/
+section.bio section div{
+    float: right;
+    position: absolute;
+    margin-left: 7%;
+    margin-top: 10.75vw;
+    width: 70%;
+    color: white;
+}
+
+#TRIGGERwhatIsMrYukIMG{
+    position: absolute;
+    height: 5%;
+    width: 100%;
+    top: 50%;
+    margin-top: unset;
+}
+
+/*button for past results*/
+section.bio section div a{
+    position: absolute;
+    margin-top: 4%;
+}
+
+
+
+/*highlight video preview*/
+section.video iframe{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80vh;
+    padding-top: 3%;
+}
+
+
+
+
+/*button for more highlights*/
+section.video a.buttonOutline{
+    display: block;
+    margin-top: 2%;
+    width: 125px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+section.video{
+    height: 100vh;
+    background-color: #333333;
+/*    scroll-snap-align: start;*/
+}
+
+
+section#contactPage{
+    clear: both;
+    height: 100vh;
+/*    scroll-snap-align: start;*/
+}
+
+
+section#contactPage aside{
+    position: relative;
+    float: left;
+    width: 33.33%;
+    height: 100vh;
+    overflow:hidden;
+}
+
+/*dylan on the ground photo*/
+section#contactPage aside img{
+    height: 100vh;
+    object-fit: cover;
+    object-position: 75% 0%;
+    transition: 2s;
+    transition-delay: .25s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#TRIGGERdylanLayout{
+    position: absolute;
+    top: 90%;
+    height: 5%;
+    width: 100%;
+}
+
+/*contact form text: "want to join our email list?"*/
+section#contactPage aside h3{
+    position: absolute;
+    text-align: right;
+    right: 0;
+    color: white;
+    margin-right: 14%;
+    margin-top: 9.825vw;
+    z-index: 1;
+}
+
+/*right side contact page*/
+section#contactPage section{
+    position: relative;
+    width: 66.66%;
+    height: 100vh;
+    float: right;
+    background-color: #F4F4F4;
+}
+
+/*text: "it'll be easier than laying..."*/
+section#contactPage section h4{
+    margin-top: 17%;
+    margin-left: 7%;
+    font-weight: 500;
+    opacity: .7;
+}
+
+/*overall contact form block*/
+section#contactPage > section > form{
+    margin-left: 7%;
+    margin-top: 4.25%;
+    margin-bottom: 3%;
+}
+
+/*lots of vertical formatting stuff*/
+section#contactPage section form div{
+    display: block;
+}
+
+section#contactPage section form div p,input{
+    display: block;
+}
+
+section#contactPage section form div div label{
+    display: block;
+}
+
+section#contactPage section form div div label input, span{
+    display: inline-block;
+}
+
+/*text color of questions*/
+section#contactPage section form div p{
+    color: black;
+    margin-bottom: 1%;
+}
+
+/*input box for the contact form*/
+section#contactPage > section > form > div > input{
+    width: 40%;
+    height: 22px;
+    border-radius: 7px;
+}
+
+/*first part of contact form*/
+section#contactPage > section > form > div:nth-of-type(1){
+    margin-bottom: 3%;
+}
+
+/*radio button block*/
+section#contactPage > section > form > div:nth-of-type(2) label{
+    margin-bottom: 2%;
+}
+
+section#contactPage > section > form > div:nth-of-type(2){
+    margin-bottom: 5%;
+}
+
+
+/*subscribe button*/
+section#contactPage section form div button.buttonSolid{
+    color: white;
+    background: #010039;
+    transition: .5s;
+    border: none;
+    line-height: 140%;
+    text-align: center;
+}
+
+
+@keyframes hoverButtonON{
+    0%{
+        transform: scaleX(1);
+    }
+    
+    25%{
+        transform: scaleX(0);
+    }
+    
+    100%{
+        transform: scaleX(1);
+    }
+    
+}
+
+@keyframes hoverButtonOFF{
+    0%{
+        transform: scaleX(1);
+    }
+    
+    25%{
+        transform: scaleX(0);
+    }
+    
+    100%{
+        transform: scaleX(1);
+    }
+    
+}
+
+/*area of the button, prevents css flicker on hover*/
+section#contactPage > section > form > div.contactButtonPlaceholder{
+    width: 160px;
+    height: 39px;
+}
+
+
+/*subscribe button hover effect*/
+.contactMailButtonGreen{
+    font-size: 16px;
+    width: 160px;
+    height: 39px;
+    cursor: pointer;
+    color: #010039;
+    border-color: #010039;
+    border-bottom-width: 4px;
+    font-weight: 500;
+    background: transparent;
+    transition: .5s;
+    border-radius: 8px;
+    animation: .75s cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 hoverButtonON;
+}
+
+
+
+/*have questions block*/
+section#contactPage > section > form:nth-of-type(2){
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 7%;
+    margin-top: 0%;
+    
+}
+
+section#contactPage > section > form:nth-of-type(2) > p,a{
+    display: block;
+}
+
+section#contactPage > section > form:nth-of-type(2) > p{
+    color: black;
+    margin-bottom: 5%;
+}
+
+/*go to contact form button*/
+section#contactPage > section > form:nth-of-type(2) > a{
+    color: #010039;
+    background-color: transparent;
+    border: 1.5px solid #010039;
+    width: 131.5px;
+    height: 21px;
+}
+
+
+/*general container for the team photo*/
+#teamPhoto{
+    position: relative;
+    height: 94.25vh;
+}
+
+
+/*testimonial*/
+section#teamPhoto > div{
+    position: absolute;
+    width: 57vw;
+    padding-top: 20%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.quoteContainer > div{
+    width: 40vw;
+    margin-left: 2%;
+    margin-top: 2.25%;
+}
+
+
+/*left opening parenthesis*/
+section#teamPhoto > div > img.parenthesis:nth-of-type(1){
+    position: relative;
+}
+
+/*right closing parenthesis*/
+section#teamPhoto > div > img.parenthesis:nth-of-type(2){
+    transform:rotate(180deg);
+    align-self: flex-end;
+}
+
+section#teamPhoto > div > p:nth-of-type(2){
+    margin-top: 2%;
+    
+}
+
+section#teamPhoto > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;
+/*    scroll-snap-align: start;*/
+}
+
+
+
+
+/************************************************Roster*/
+
+/*diff color menu nav elements*/
+body.roster header div a{
+    color: #CCCCCC;
+}
+
+/*highlight menu nav element after clicked*/
+body.roster header div a:nth-of-type(1){
+    color: white;
+}
+
+body.roster{
+/*
+    scroll-snap-type: proximity;
+    scroll-snap-type: y proximity;
+    scroll-snap-align: start;
+*/
+}
+
+@keyframes slightPop{
+    0%{
+        transform: scale(0) skewY(0deg);
+        opacity: 0;
+    }
+    
+    50%{
+        transform: scale(1.2) skew(5deg);
+        opacity: 1;
+    }
+    
+    70%{
+        transform: scale(.85) skew(8deg);
+    }
+    
+    85%{
+        transform: scale(1.1) skew(4deg);
+    }
+    
+    100%{
+        transform: scale(1) skew(0deg);
+    }
+}
+
+@keyframes slideLeftShort{
+    0%{
+        transform: translateX(-50px);
+    }
+    
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+/*Roster year main title*/
+body.roster main h1{
+    top: 15%;
+    left: 6.5%;
+    animation: 2.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 slideLeftShort;
+    z-index: 1000;
+}
+
+.rosterPlaceholderText{
+    position: absolute;
+    top: 25%;
+    left: 6.5%;
+    z-index: 1;
+    opacity: .75;
+    animation: 2.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 slideLeftShort;
+}
+
+
+/*navigation arrow*/
+body main img.navArrow{
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 5%;
+    text-align: center;
+    top: 90%; 
+    opacity: .8;
+    z-index: 1000;
+}
+
+/*button for "past rosters"*/
+body.roster > main > div:nth-of-type(1){
+    position: absolute;
+    right: 0;
+    margin-right: 7.7%;
+    top: 15.8%; 
+    z-index: 1000;
+
+}
+
+
+.pastRosterButtonClicked{
+    border-radius: 11px 11px 0px 0px;
+}
+
+.pastRosterButtonNotClicked{
+    border-radius: 11px;
+}
+
+
+/*hover effect for past roster button*/
+#pastRosterButton:hover{
+    color: #010039;
+    cursor: pointer;
+    background: rgba(255,255,255,.7);
+    transform:scale(1);
+    transition: .3s;
+}
+
+/*hover effect for past roster button*/
+#pastRosterButtonHarmful:hover{
+    color: #010039;
+    cursor: pointer;
+    background: rgba(255,255,255,.7);
+    transform:scale(1);
+    transition: .3s;
+}
+
+
+/*past roster buttons*/
+div div#pastRosterMenu{
+    height: 25vh;
+    border: 1.5px solid white;
+    border-radius: 0px 0px 11px 11px;
+    overflow: auto;   
+    box-sizing: border-box;
+}
+
+/*past roster buttons*/
+div div#pastRosterMenuHarmful{
+    height: 25vh;
+    border: 1.5px solid white;
+    border-radius: 0px 0px 11px 11px;
+    overflow: auto;   
+    box-sizing: border-box;
+}
+
+/*starting state for past roster button menu*/
+div div#pastRosterMenu{
+    display: none;
+}
+
+/*starting state for past roster button menu*/
+div div#pastRosterMenuHarmful{
+    display: none;
+}
+
+/*text within past roster menu*/
+div div#pastRosterMenu a{
+    padding-left: 35px;
+    text-decoration: none;
+    line-height: 200%;
+}
+
+/*text within past roster menu*/
+div div#pastRosterMenuHarmful a{
+    padding-left: 35px;
+    text-decoration: none;
+    line-height: 200%;
+}
+
+
+/*hover effect for individual year on past roster menu*/
+div div#pastRosterMenu a:hover{
+    background-color: rgba(0,0,0,.5);
+}
+
+
+/*hover effect for individual year on past roster menu*/
+div div#pastRosterMenuHarmful a:hover{
+    background-color: rgba(0,0,0,.5);
+}
+
+/*box with the roster photo inside*/
+body.roster main div:nth-of-type(2){
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: relative;
+    object-fit: cover;
+    display: block;
+    overflow: hidden;
+    top: 0;
+    margin: 0;
+}
+
+/*roster photo itself*/
+body.roster main img.mainPhoto{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+
+
+/*all the roster cards together*/
+body.roster > section{
+    padding: 4%;
+    padding-bottom: 2%;
+/*    scroll-snap-align: start;*/
+}
+
+/*organizing those cards together*/
+body.roster > section > section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+/*Individual player card image + images, attributes for all*/
+body.roster > section > section > div.rosterCard{
+    position: relative;
+    overflow: hidden;
+    width: 275px;
+    height: 275px;
+    border-radius: 8px;
+    margin-bottom: 2%;
+}
+
+
+/*no hover effect for empty roster cards 2019*/
+body.roster > section > section > .rosterCard.ghostCard:hover{
+    cursor: default;
+}
+
+
+
+/*number*/
+body.roster > section > section > .rosterCard > section > h2{
+    position: absolute;;
+    font-size: 50px;
+    font-weight: 300;
+    text-align: right;
+    color: white;
+    opacity: .7;
+    z-index: 1;
+    right: 0;
+    margin-top: 97.5%;
+    margin-right: 5%;
+    
+}
+
+/*container with player name and player year*/
+body.roster > section > section > .rosterCard > section:nth-of-type(1) > div{
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 5%;
+    margin-left: 6%;
+}
+
+/*player name*/
+body.roster > section > section > .rosterCard > section > div > h4{
+    color: white;
+    margin-bottom: 2%;
+}
+
+/*player year*/
+body.roster > section > section > .rosterCard > section > div > a{
+    color: white;
+    opacity: .7;
+}
+
+/*clickable triangle element container*/
+body.roster > section > section > .rosterCard > section:nth-of-type(2) > div{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+}
+
+/*triangle itself*/
+body.roster > section > section > .rosterCard > section:nth-of-type(2) > div > img.triangle{
+    border-top-right-radius: 8px;
+    width: 100%;
+}
+
+/*part of the plus sign within the triangle, horizontal*/
+body.roster span{
+    position: absolute;
+    top: 17%;
+    right: 13%;
+    width: 12px;
+    height: 3px;
+    background-color: white;
+}
+
+.xflip1{
+    transform:rotate(45deg);
+}
+
+.xflip2{
+ transform:rotate(135deg);
+}
+
+/*horizontal part of plus sign*/
+span.horiz{
+    transform:rotate(0deg);
+}
+
+/*vertical part of plus sign*/
+span.vert{
+    transform:rotate(90deg);
+}
+
+body.roster > section > section > .rosterCard > section:nth-of-type(2) > div > div{
+    display: inline-block;
+}
+
+/*Player photos*/
+body.roster > section > section > .rosterCard > section > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit:cover;
+    position: absolute;
+}
+
+/*when hovering over roster cards*/
+body.roster > section > section > .rosterCard:hover{
+    cursor: pointer;
+}
+
+.cardShow{
+    display: block;
+    transition: .4s;
+}
+
+.cardHide{
+    display: none;
+}
+
+.opacityON{
+    opacity: 1;
+}
+
+.opacityOFF{
+    opacity: 0;
+    transition: .75s;
+}
+
+/*player name*/
+h4.rosterCardText{
+    color: white;
+    margin-bottom: 3%;
+}
+
+/*school year, may not include*/
+h5.rosterCardText{
+    color: white;
+    opacity: .6;
+    margin-bottom: 1%;
+}
+
+
+/*general formatting for table elements*/
+td.rosterCardText{
+    color: white;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+/*the table with the player info*/
+td.rosterCardText{
+    padding-bottom: 2%;
+}
+
+/*major, hometown, height*/
+td.rosterCardText:nth-of-type(1){
+    color: rgb(190,190,190);
+}
+
+/*answers to the categories above*/
+td.rosterCardText:nth-of-type(2){
+    padding-left: 5%;
+    width: 100%;
+}
+
+/*player bio, the whole back page*/
+.playerBio{
+    top: 0;
+    margin: 5%;
+    margin-top: 12%;
+    transform: rotateY(180deg);
+}
+
+/*the question answers all together, like the container for this whole block*/
+.playerBio > section{
+    position: relative;
+    margin-top: 7%;
+    overflow: auto;
+    height: 235px;
+}
+
+/*each individual question+answer block*/
+.playerBio > section > section{
+    margin-bottom: 6%;
+}
+
+/*questions in the card*/
+p.rosterCardText{ 
+    font-size: 16px;
+    line-height: 125%;
+    font-weight: 400;
+    margin-bottom: 2%;
+    color: rgb(168, 197, 175);
+}
+
+/*answers to those questions*/
+a.rosterCardText{
+    font-size: 13.5px;
+}
+
+/*Gradient*/
+.heavyGradient{
+    opacity: .75;
+    transition: .2s;
+}
+
+/*so on hover the overall image gets lighter*/
+.lightGradient{
+    opacity: .5;
+    transition: .2s;
+}
+
+/*roster background for when a card is clicked*/
+.blackBackground{
+    background: rgb(120,120,120);
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.ghostCard{
+    opacity: 0;
+}
+
+
+/*for the card flipping animation*/
+.flipBack{
+    animation-name: flipperBack;
+    animation-duration: .6s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/*makes it so the text isn't background*/
+.flipStay{
+    transform: perspective(1000px) rotateY(180deg);
+    -webkit-transform: perspective(1000px) rotateY(-180deg);
+}
+
+.flipFront{
+    animation-name: flipperFront;
+    animation-duration: .6s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    
+}
+
+@keyframes flipperBack{
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+        -webkit-transform: perspective(1000px) rotateY(0deg);
+        filter: blur(0px);
+    }
+    
+    100%{
+        transform: perspective(1000px) rotateY(180deg);
+        -webkit-transform: perspective(1000px) rotateY(-180deg); 
+        background-color: black; 
+        filter: blur(1px);
+
+    }
+}
+
+@keyframes flipperFront{
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+        -webkit-transform: perspective(1000px) rotateY(0deg); 
+        background-color: black;
+        filter: blur(0px);
+    }
+    
+    100%{
+        transform: perspective(1000px) rotateY(-180deg);
+        -webkit-transform: perspective(1000px) rotateY(360deg);
+        filter: blur(1px);
+    }
+    
+}
+
+.flexBoxHidden{
+    text-align: center;
+    margin:auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+
+/************************************************Media*/
+
+body.media{
+/*
+    scroll-snap-type: proximity;
+    scroll-snap-type: y proximity;
+    scroll-snap-align: start;
+*/
+}
+
+
+
+/*diff color menu nav elements*/
+body.media header div a{
+    color: #CCCCCC;
+}
+
+/*hover effect for individual page links*/
+/*reference: https://codepen.io/mehi/pen/MyWqPM*/
+body.media header div a:after{
+    background: white;
+}
+
+body.media header > div > a:hover:after{
+    background: white;  
+}
+
+
+/*highlight menu nav element after clicked*/
+body.media header div a:nth-of-type(2){
+    color: white;
+}
+
+
+/*containers for the video and photo images/buttons*/
+body.media > main > section > div{
+    overflow: hidden;
+    height: 100vh;
+    width: 50%;
+    object-fit: cover;
+    overflow: hidden;
+/*    scroll-snap-align: start;*/
+}
+
+/*video button container*/
+body.media > main > section > div:nth-of-type(1){
+    float: left;
+}
+
+/*photo button container*/
+body.media > main > section > div:nth-of-type(2){
+    float: right;
+}
+
+/*image positioning within button for videos*/
+.videoButton{
+    height: 165%;
+    object-position: 0 -150px;
+    transition: 1s;
+}
+
+/*image positioning within button for photos*/
+.photoButton{
+    height: 100%;
+    object-position: -290px 0;
+    transition: 1s;
+}
+
+.videoButton:hover{
+    cursor: pointer;
+    height: 169%;
+    transition: .5s;
+}
+
+.photoButton:hover{
+    cursor: pointer;
+    height: 102.5%;
+    transition: .5s;
+}
+
+
+body.media article section aside h3, a, p, a{
+    color: white;
+}
+
+
+/*general sizing for titles on buttons*/
+body.media main section h2{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    z-index: 99;
+    color: white;
+    text-align: center;
+
+}
+
+
+/*some edits for title "photos"*/
+body.media main section:nth-of-type(2) h2{
+    left: 71%;
+    color: black;
+    
+}
+
+/*video viewing screen*/
+body.media > article#videoLink > section:nth-of-type(1){
+/*    scroll-snap-align: start;*/
+    height: 100vh;
+    background-color: #333333;
+}
+
+/*viewing screen p2*/
+body.media article section:nth-of-type(1) section{
+    height: 100vh;
+    padding: 4%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/*video title on viewing screen*/
+body.media article section h2{
+    color: white;
+    border-bottom: 5px solid #010039;
+    width: 95px;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+}
+
+/*dimensions of youtube video itself*/
+body.media article#videoLink section section iframe{
+    float: left;
+    width: 70vw;
+    height: 41.675vw;
+}
+
+.vimeoDimensions{
+    margin-top: -1%;
+}
+
+
+/*text section container on the right*/
+body.media article#videoLink section section aside{
+    float: left;
+    width: 17.5vw;
+    margin-left: 2.5vw;
+}
+
+/*title for section on right*/
+body.media > article > section > section > aside > h3{
+    line-height: 110%;
+    margin-bottom: 4%;
+}
+
+body.media > article#videoLink > section > section > aside > div{
+    display: flex;
+}
+
+/*play icon*/
+body.media > article#videoLink > section > section > aside > div > img{
+    margin-right: 4%;
+    margin-top: 1%;
+    width: 8%;
+    height: 8%;
+}
+
+/*time of video*/
+body.media > article#videoLink > section > section > aside > div > a{
+    opacity: .8;
+}
+
+/*who it's edited by*/
+body.media > article#videoLink > section > section > aside > p{
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+/*video description*/
+body.media > article#videoLink > section > section > aside > a{
+    color: #BCBCBC;
+    height: 57.125vh;
+    overflow: auto;
+    font-size: .9em;
+}
+
+
+
+
+
+/*more video section*/
+body.media article#videoLink section:nth-of-type(2){
+    height: 100vh;
+    background-color: #DDDDDD;
+/*    scroll-snap-align: start;*/
+}
+
+.darkOverlay{
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: black;
+}
+
+.videoThumbnail:hover .darkOverlay{
+    cursor: pointer;
+    opacity: .5;
+}
+
+/*show which thumbnail has been selected - for video and photo*/
+.activeThumbnail{
+    pointer-events: none;
+    opacity: .5;
+    transition: .5s;
+}
+
+
+
+/*color of the video time text*/
+section:nth-of-type(2) > section > article > div > div > a{
+    color: #606060;
+} 
+
+/*general block of more videos*/
+body.media article section:nth-of-type(2) section{
+    padding: 4%;
+    box-sizing: border-box;
+}
+
+/*title "more videos"*/
+body.media article section:nth-of-type(2) section h3{
+    margin-bottom: 1%;
+}
+
+/*thumbnails of videos organized*/
+body.media > article#videoLink > section:nth-of-type(2) > section > article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 77.4vh;
+}
+
+/*general video thumbnail package container*/
+body.media > article#videoLink > section:nth-of-type(2) > section > article > div{
+    width: 20vw;
+    height: 12.5vmax;
+    margin-bottom: 9%;
+    position: relative;
+    transition: .5s;
+}
+
+
+/*making the general thumbnail format right*/
+body.media > article#videoLink > section:nth-of-type(2) > section > article > div img, p, div{
+    display: block;
+}
+
+/*video thumbnails the image itself*/
+body.media > article#videoLink > section:nth-of-type(2) > section > article > div > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*video title*/
+body.media > article > section:nth-of-type(2) > section > article > div > p{
+    margin-top: 6px;
+    color: black;
+}
+
+/*the play button and video length time, making them sit next to each other*/
+body.media > article > section:nth-of-type(2) > section > article > div > div{
+    display: flex;
+}
+
+/*play button for the video gallery*/
+body.media > article#videoLink > section:nth-of-type(2) > section > article > div > div > img{
+    height: 8.5%;
+    width: 8.5%;
+    margin-top: .6%;
+    margin-right: 3%;
+}
+
+/*hidden div of all the video information*/
+body.media > article > section:nth-of-type(2) > section > article > div > div:nth-of-type(2).hidden{
+    display: none;
+}
+
+/*even more video button*/
+
+/*size of the href link*/
+body.media article#videoLink section:nth-of-type(2) div:nth-of-type(8) a{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10s;
+}
+
+/*more videos placeholder*/
+body.media article#videoLink section:nth-of-type(2) div:nth-of-type(8) a img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+body.media article#videoLink section:nth-of-type(2) div:nth-of-type(8):hover{
+    cursor: pointer;
+    opacity: .75;
+}
+
+
+
+
+
+
+
+
+/*main photo page*/
+body.media > article#photoLink > section:nth-of-type(1){
+    height: 100vh;
+    background-color: #333333;
+/*    scroll-snap-align: start;*/
+}
+
+/*display photo container*/
+body.media > article#photoLink > section:nth-of-type(1) > section > div{
+    float: left;
+    height: 90%;
+    width: 67%;
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+}
+
+/*display photo itself*/
+body.media > article#photoLink > section:nth-of-type(1) > section > div > img{
+    overflow: hidden;
+    object-fit: cover;
+    width: 100%;
+}
+
+/*makes currently shown gallery image, that thumbnail unclickable*/
+.activePhotoGalleryThumbnail{
+    pointer-events: none;
+    opacity: .125;
+    transition: .125s;
+}
+
+/*container with both of the gallery arrows, clearly*/
+.galleryArrowContainer{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 33%; 
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/*the arrow you click on and stuff*/
+.galleryArrows{
+    width: 5%;
+    position: relative;
+    padding: 3%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    opacity: .4;
+    transition: .25s;
+}
+
+/*left arrow*/
+.galleryArrows:nth-of-type(1){
+    padding-right: 10%;
+}
+
+/*right arrow*/
+.galleryArrows:nth-of-type(2){
+    padding-left: 10%;
+    
+}
+
+.galleryArrows:hover{
+    cursor: pointer;
+    opacity: .7;
+    transition: .25s;
+}
+
+/*the left one*/
+.galleryArrows:nth-of-type(1){
+    float: left;
+}
+
+/*the right one*/
+.galleryArrows:nth-of-type(2){
+    float: right;
+}
+
+
+/*side area from main photo*/
+body.media article#photoLink section:nth-of-type(1) aside{
+    float: left;
+    width:30%;
+    height: 90%;
+    margin-left: 3%;
+}
+
+/*general formatting of photo thumbnails in gallery*/
+body.media article#photoLink section:nth-of-type(1) section aside section{
+    height: 30vw;
+    padding: 0%;
+    margin-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.photoGalleryThumbnail:hover{
+    cursor: pointer;
+    opacity: .4;
+}
+
+/*hidden div of high quality photos for all the photo thumbnails*/
+body.media #photoLink section:nth-of-type(1) section aside section.hidden{
+    display: none;
+}
+
+/*individual thumbnails for the side area*/
+body.media article#photoLink section:nth-of-type(1) section aside section img{
+    width: 8vw;
+    height: 5vmax;
+    margin-bottom: 3%;
+    transition: .25s;
+}
+
+
+
+
+/*title of which photo album it is*/
+body.media article#photoLink section:nth-of-type(1) section aside div h3{
+    margin-bottom: 1%;
+}
+
+/*formatting of icon & photo number*/
+body.media article#photoLink section:nth-of-type(1) section aside div div{
+    display: flex;
+}
+
+/*photo gallery icon*/
+body.media article#photoLink section:nth-of-type(1) section aside div div img{
+    width: 7%;
+    height: 7%;
+    margin-top: .25%;
+    margin-right: 2.5%;
+}
+
+/*location of photos*/
+body.media > article#photoLink > section:nth-of-type(1) > section > aside > div > a{
+    margin-top: 2%;
+    opacity: .5;
+    margin-bottom: 2%;
+}
+
+
+
+
+
+
+
+/*more photos section*/
+body.media article#photoLink section:nth-of-type(2){
+    height: 94.25vh;
+    background-color: #DDDDDD;
+/*    scroll-snap-align: start;*/
+}
+
+
+
+.photoThumbnail:hover .darkOverlay{
+    cursor: pointer;
+    opacity: .5;
+}
+
+
+body.media article#photoLink section:nth-of-type(2) section{
+    height: 94.25vh;
+}
+
+/*thumbnail of photos organized*/
+body.media > article#photoLink > section:nth-of-type(2) > section > article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 77.4vh;
+}
+
+/*general photo thumbnail package container*/
+body.media > article#photoLink > section:nth-of-type(2) > section > article > div{
+    width: 20vw;
+    height: 13.5vmax;
+    margin-bottom: 8%;
+    position: relative;
+    transition: .5s;
+}
+
+/*photo thumbnails, the image itself*/
+body.media > article#photoLink > section:nth-of-type(2) > section > article > div > img:nth-of-type(1){
+    width: 100%;;
+    height: 100%;;
+    object-fit: cover;
+}
+
+body.media > article#photoLink > section:nth-of-type(2) > section > article > div > p{
+    margin-bottom: 1.5%;
+}
+
+/*photo gallery icon positioning*/
+body.media > article#photoLink > section:nth-of-type(2) > section > article > div > div > img{
+    width: 11%;
+    height: 11%;
+    margin-top: .75%;
+    margin-right: 4%;   
+}
+
+
+
+/*even more photo button*/
+
+/*size of the href link*/
+body.media > article#photoLink > section:nth-of-type(2) > section > article > div:nth-of-type(8) a{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+/*plus sign itself*/
+body.media > article#photoLink > section:nth-of-type(2) > section > article > div:nth-of-type(8) a img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+body.media > article#photoLink > section:nth-of-type(2) > section > article > div:nth-of-type(8):hover{
+    cursor: pointer;
+    opacity: .75;
+}
+
+
+
+
+
+/************************************************Harmful*/
+
+/*highlight menu nav element after clicked*/
+body.harmful header div a:nth-of-type(3){
+    color: #010039;
+}
+
+body.harmful{
+/*
+    scroll-snap-type: proximity;
+    scroll-snap-type: y proximity;
+*/
+}
+
+
+/*background color for landing page*/
+body.harmful main{
+    background-color: #F4F4F4;
+/*    scroll-snap-align: start; */
+    overflow:hidden;
+}
+
+/*Title + text container for landing page*/
+main > section.titleNText{
+    margin-left: 6.375%;
+    padding-top: 9.75%;
+    width: 55%;
+}
+
+/*text for Harmful bio*/
+section.titleNText p{
+    color: black;
+    margin-top: 2%;
+}
+
+@keyframes slideUpShort{
+    0%{
+        transform: translateY(100px);
+    }
+    
+    100%{
+        transform: translateY(0);
+    }
+}
+
+
+/*for Harmful logo, greyed out in bottom right*/
+body.harmful main img:nth-of-type(1){
+    width: 45%;
+    position: absolute;
+    display: block;
+    opacity: .1;
+    right: 0;
+    bottom: 0;
+    animation: 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 slideUpShort;
+}
+
+
+
+
+
+/*2019 Roster title on top of image*/
+body.harmful section h1{
+    position: absolute;
+    color: white;
+    top: 115%;
+    left: 6.5%;
+}
+
+/*text asking for images if they're out there*/
+.harmfulPlaceholderText{
+    position: absolute;
+    top: 125%;
+    left: 6.5%;
+    z-index: 1;
+    opacity: .75;
+}
+
+/*box with the harmful roster photo inside*/
+.harmfulRosterPhoto div:nth-of-type(2){
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+    overflow: hidden;
+    top: 0;
+    margin: 0;
+    z-index: -1;
+}
+
+
+/*Harmful team photo itself*/
+.harmfulRosterPhoto div:nth-of-type(2) > img:nth-of-type(1){
+/*    scroll-snap-align: start;*/
+    position: absolute;
+    width: 100%;
+    object-position: 0% -150px;
+}
+
+#harmful2019, #harmful2018, #harmful2006{
+    overflow:hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+
+/*Button for past rosters*/
+body.harmful > section > div:nth-of-type(1){
+    position: absolute;
+    right: 0;
+    margin-right: 7.7%;
+    top: 120%; 
+}
+
+
+/*all the roster table together*/
+body.harmful > section > section{
+    padding: 4%;
+}
+
+/*    roster table*/
+body.harmful > section > section > table{
+    width: 100%;
+}
+
+/*roster 2019 title*/
+body.harmful > section > section > h2{
+    margin-bottom: 1.5%;
+}
+
+
+/*making the category titles bold*/
+body.harmful section section table:nth-of-type(1) tr:nth-of-type(1) td{
+    font-weight: 500;
+}
+
+
+/*table spacing*/
+body.harmful section section table tr, body.harmful section section table td{
+    padding-bottom: 1.25%;
+    padding-top: 1.25%;
+}
+
+
+body.harmful section section table tr{
+    border-bottom: solid 1px #C7C7C7;
+}
+
+
+/*Number*/
+body.harmful section table tr td:nth-of-type(1){
+    padding-left: 1.5%;
+    width: 5%;
+    
+}
+
+/*Name*/
+body.harmful section table tr td:nth-of-type(2){
+    width: 15%;
+}
+
+/*Height*/
+body.harmful section table tr td:nth-of-type(3){
+    width: 6%;
+    
+}
+
+/*Year*/
+body.harmful section table tr td:nth-of-type(4){
+    width: 8%;
+    
+}
+
+/*Major*/
+body.harmful section table tr td:nth-of-type(5){
+    width: 20%;
+    
+}
+
+/*Hometown*/
+body.harmful section table tr td:nth-of-type(6){
+    width: 15%;
+    
+}
+
+body.harmful section section a{
+    margin-top: 2%;
+    color: black;
+}
+
+
+
+
+/************************************************About*/
+
+/*highlight menu nav element after clicked*/
+body.about header div a:nth-of-type(4){
+    color: #010039;
+}
+
+
+body.about{
+/*
+    scroll-snap-type: proximity;
+    scroll-snap-type: y proximity;
+*/
+}
+
+@keyframes slideDownShort{
+    0%{
+        transform: translateY(-100px);
+    }
+    
+    100%{
+        transform: translateY(0);
+    }
+}
+
+
+/*Yuk face on right side*/
+body.about main img:nth-of-type(1){
+    width: 45%;
+    top: 7.25%;
+    position: absolute;
+    opacity: .1;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
+    animation: 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 slideDownShort;
+    transition: 1.75s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform;
+
+}
+
+
+body.about main{
+    background-color: #F4F4F4;
+/*    scroll-snap-align: start;*/
+}
+
+
+
+/*container with all the results*/
+body.about section#resultsList{
+/*    scroll-snap-align: start;  */
+}
+
+/*container within the container, results and whatnot*/
+body.about > section > section{
+    padding: 6.375%;
+}
+
+
+/*overall table size*/
+body.about section table{
+    margin-top: 2%;
+    width: 70%;
+}
+
+
+/*year column*/
+body.about section table tr td:nth-of-type(1){
+    width: 4%; 
+}
+
+/*results column*/
+body.about section table tr td:nth-of-type(2){
+    width: 17%;
+    padding-bottom: 5%;
+    line-height: 150%; 
+}
+
+
+/*targets last row of table */
+body.about section section table tr:last-child td{
+    padding-bottom: 0%;
+}
+
+
+
+
+
+/************************************************Contact*/
+
+/*highlight menu nav element after clicked*/
+body.contact header div a:nth-of-type(5){
+    color: white;
+}
+
+/*hover effect for individual page links*/
+/*reference: https://codepen.io/mehi/pen/MyWqPM*/
+body.contact header div a:after{
+    background: white;
+}
+
+body.contact header > div > a:hover:after{
+    background: white;  
+}
+
+/*prevents the broswer from being weird and scrolling*/
+body.contact{
+    overflow: hidden;
+
+}
+
+body.contact main{
+    height: 94vh;
+}
+
+
+/*map and gradient image container*/
+body.contact > main > div{
+    position: relative;
+    height: 94vh;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+/*the images together overall*/
+body.contact main img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*underlying gradient, all solid*/
+body.contact > main > div > img:nth-of-type(1){
+    opacity: .9;
+    
+}
+
+/*top level gradient, left faded out*/
+body.contact > main > div > img:nth-of-type(4){
+    opacity: .95;
+}
+
+/*on top of the maps, to the left of the text area, will do the hover effect*/
+.containerButton{
+    position: absolute;
+    left: 0;
+    top: 10vh;
+    height: 84vh;
+    width: 50%;
+    transition: 1s;
+}
+
+.containerButton:hover{
+    cursor: pointer;
+}
+
+/*map resting place and size*/
+body.contact main img.mapNormal{
+    position: absolute;
+    object-fit: cover;
+    width: 110%;
+    height: 100vh;
+    object-position: 0px -4vw;
+    transition: 6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/*map zoomed in around CMU*/
+body.contact main img.mapZoomed{
+    position: absolute;
+    object-fit: cover;
+    width: 255vh;
+    height: 255vh;
+    object-position: -117vh -69vh;
+    transition: 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+
+/*yuk location popup of width 0*/
+body.contact main div .yukLocation{
+    width: 0px;
+    top: 30vh;
+    left: 29vh;
+    height: unset;
+    z-index: 1;
+    transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/*yuk location being shown*/
+body.contact main div .yukLocationReveal{
+    width: 50px;
+    top: 42vh;
+    left: 40vh;
+    height: unset;
+    z-index: 1;
+    transition: .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+/*map resting place and size*/
+body.contact main img.mapNormalSAF{
+    position: absolute;
+    object-fit: cover;
+    -webkit-transform: scale(1);
+    -webkit-transition: 6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/*map zoomed in around CMU*/
+body.contact main img.mapZoomedSAF{
+    position: absolute;
+    object-fit: cover;
+    -webkit-transform: scale(2.55);
+    -webkit-transition: 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/*yuk location popup of width 0*/
+body.contact main div .yukLocationSAF{
+    width: 0px;
+    top: 25vh;
+    left: 23vh;
+    height: unset;
+    z-index: 1;
+    -webkit-transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/*yuk location being shown*/
+body.contact main div .yukLocationRevealSAF{
+    width: 50px;
+    top: 31vh;
+    left: 35vh;
+    height: unset;
+    z-index: 1;
+    -webkit-transition: .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+
+/*side with text*/
+body.contact main aside{
+    position: absolute;
+    height: 94vh;
+    width: 50%;
+    top: 0;
+    right: 0;
+/*    color: #010039;*/
+/*    background-image: linear-gradient(#52c234, #061700);*/
+/*background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);*/
+    
+}
+
+body.contact main aside section{
+    padding-top: 12%;
+    margin: 6%;
+    margin-top: 0%;
+ 
+}
+
+
+/*main contact line*/
+body.contact main aside h1{
+    position: relative;
+    color: white;
+    font-weight: 500;
+    top: 0%;
+    left:0%;
+    margin-bottom: 1.5%;
+
+}
+
+body.contact main aside section form{
+    margin-top: 5%;
+}
+
+body.contact main aside section form div{
+    display: block;
+    margin-top: 3%;
+}
+
+/*spacing between title and input area*/
+body.contact main aside section form div p{
+    margin-bottom: .375%;
+    
+}
+
+/*full name and email boxes for the contact form*/
+body.contact > main > aside > section > form > div:nth-of-type(1) > textarea, div:nth-of-type(2) > textarea{
+    width: 42vh;
+    height: 22px;
+    border-radius: 7px;
+    resize: none;
+}
+
+body.contact main aside section form div p, textarea{
+    display: block;
+}
+
+/*message box*/
+body.contact > main > aside > section > form > div:nth-of-type(3) > textarea{
+    width: 98.5%;
+    height: 20vh;
+    border-radius: 7px;
+    resize: none; 
+    margin-bottom: 5%;
+}
+
+
+
+/*send message button*/
+body.contact > main > aside > section > form > div > button.buttonSolid{
+    color: #010039;
+    background: white;
+    transition: .5s;
+    width: 185px;
+    height: 39px;
+    border: none;
+}
+
+/*area of the button, prevents css flicker on hover*/
+body.contact > main > aside > section > form > .contactButtonPlaceholder{
+    width: 185px;
+    height: 39px;
+    transition: .5s;
+}
+
+.contactMailButtonWhite{
+    font-size: 16px;
+    width: 185px;
+    height: 39px;
+    cursor: pointer;
+    color: white;
+    border-color: white;
+    border-bottom-width: 4px;
+    font-weight: 500;
+    background: transparent;
+    transition: .5s;
+    border-radius: 8px;
+    animation: .75s cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 hoverButtonON;
+}
+
+
+
+/************************************************Footer*/
+
+
+
+footer{
+    clear: both;
+    height: 5.75vh;
+    background-color: #F4F4F4;
+    z-index: 10000;
+}
+
+footer section{
+    position: relative;
+}
+
+footer nav{
+    position: absolute;
+    right: 0;
+    margin-right: .75%;
+    margin-top: .375%;
+    width: 50%;
+    text-align: right;
+}
+
+footer nav a{
+    display: inline-block;
+    margin-left: 1%;
+}
+
+
+
+/*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************   RESPONSIVE DESIGN   *************/
+
+
+
+@media screen and (max-width:1920px) and (min-width:1441px){
+    /************************************************Styling*/
+    
+    /************************************************Header*/
+    /*    top alignment for the header*/
+    header div{
+        margin-top: .25%;
+    }
+    
+    /************************************************Homepage*/
+    /*    placement for white circle in hiding*/
+    span.whiteCircle{
+        top: 20%;
+        left: 9%;
+    }
+
+    /*for image 1 and 2 Gu catch*/
+    @keyframes zoomOutFromRight{
+        0%{
+            height: 270%;
+            width: 270%;
+            object-position: -1800px -700px;
+        } 
+
+        60%{
+            height: 100%;
+            width: 100%;
+            object-position: 10px 0px; 
+        }    
+
+        100%{
+            height: 100%;
+            width: 100%;
+            object-position: 2300px 0px; 
+        }
+    }
+
+    /*for image 1 and 2 Eric catch*/
+    @keyframes zoomOutFromRightx2{
+        0%{
+            height: 270%;
+            width: 270%;
+            object-position: -1800px 60%;
+        } 
+
+        60%{
+            height: 100%;
+            width: 100%;
+            object-position: 10px 100%; 
+        }    
+
+        100%{
+            height: 100%;
+            width: 100%;
+            object-position: 2300px 100%; 
+        }
+    }
+
+    /*for social image, high five line*/
+    @keyframes slideFromLtoRtoL{
+        0%{
+            object-position: -1265px 0px;
+        }
+
+        45%{
+            object-position: 0px 0px;
+        }
+
+        100%{
+            object-position: -2300px 0px;
+        }
+    }
+    
+    /*    container with yuk face and 2 titles*/
+    main > section.titleInfo{
+        margin-left: 5.625%;
+        margin-top: 7%;
+    }
+    
+    /*    size of yuk face container - controls size of yuk face*/
+    main > section.titleInfo > aside{
+        width: 8.5%;
+    }
+    
+    /*    sizing for the bottom right photo credits*/
+    .photoCredit{
+        font-size: 16px;
+    }
+    
+    /*    bio section block of text*/
+    section.bio section div{
+        margin-top: 10.5vw;
+        width: 45%;
+    }
+    
+    /*    youtube video on page*/
+    section.video iframe{
+        height: 46vw;
+        width: 70.5vw;     
+    }
+    
+    /*    title about it'll be easier than laying out*/
+    section#contactPage section h4{
+        margin-top: 16.125%;
+    }
+    
+    /*    length of email input box*/
+    #contactPage div:nth-of-type(1) textarea[type="text"]{
+        width: 16vw;
+    }
+    
+    /*    space between radio buttons and submit button*/
+    section#contactPage > section > form > div:nth-of-type(2){
+        margin-bottom: 3%;
+    }
+    
+    /*    top margin for below section directing to real contact page*/
+    section#contactPage > section > form:nth-of-type(2){
+        margin-top: 9%;
+    }
+    
+    /*    width for the parenthesis and text box*/
+    section#teamPhoto > div{
+        width: 45vw;
+    }
+    
+    /*    width of text box for quote*/
+    .quoteContainer > div{
+        width: 30vw;
+    }
+    
+    /************************************************Roster*/
+    /*    roster title with what year it is*/
+    body.roster main h1{
+        left: 5.5%;
+    }
+    
+    /*    generalized roster card*/
+    body.roster > section > section > div.rosterCard{
+        width: 400px;
+        height: 400px;
+    }
+    
+    /*    number on roster card*/
+    body.roster > section > section > .rosterCard > section > h2{
+        margin-right: 8%;
+        margin-top: 95%;
+        font-size: 80px;
+    }
+    
+    /*    container with player name and year*/
+    body.roster > section > section > .rosterCard > section:nth-of-type(1) > div{
+        margin-bottom: 7%;
+        margin-left: 8%;
+    }
+    
+    /*    player name*/
+    body.roster > section > section > .rosterCard > section > div > h4{
+        font-size: 30px;
+    }
+    
+    /*    player year*/
+    body.roster > section > section > .rosterCard > section > div > a{
+        font-size: 1.5em;
+    }
+    
+    /*    black triangle*/
+    body.roster > section > section > .rosterCard > section:nth-of-type(2) > div{
+        width: 50px;
+    }
+    
+    /*    the "x" and plus*/
+    body.roster span{
+        width: 16px;
+    }
+    
+    /*    name on back of card*/
+    h4.rosterCardText{
+        30px;
+    }
+    
+    /*    text in the table with major, hometown, etc*/
+    td.rosterCardText{
+        font-size: 1.1em;
+    }
+    
+        
+    /*    size of overall bio text container*/
+    .playerBio > section{
+        height: 365px;
+    }
+    
+    /*    prompt size*/
+    p.rosterCardText{
+        font-size: 1.25em;
+    }
+    
+    /*    answer to prompt size*/
+    a.rosterCardText{
+        font-size: 1em;
+    }
+
+    
+    /************************************************Media*/
+    
+    /*    video play icon in gallery*/
+    body.media > article#videoLink > section > section > aside > div > img{
+        width: 6%;
+        height: 6%;
+        margin-top: .5%;
+        margin-right: 3%;   
+    }
+    
+    /*    video play icon in more videos*/
+    body.media > article#videoLink > section:nth-of-type(2) > section > article > div > div > img{
+        width: 6%;
+        height: 6%;
+        margin-top: 0;
+        margin-right: 2%;
+    }
+    
+    /*    photo album icon in gallery*/
+    body.media article#photoLink section:nth-of-type(1) section aside div div img{
+        width: 6%;
+        height: 6%;
+        margin-top: 0%;
+    }
+    
+    /*    photo album icon in more photos*/
+    body.media > article#photoLink > section:nth-of-type(2) > section > article > div > div > img{
+        width: 9%;
+        height: 9%;
+        margin-top: 0%;
+    }
+    
+    body.media > article#videoLink > section > section > aside > a{
+        font-size: 1em;
+    }
+    
+    /************************************************Harmful*/
+    /*    block of text section*/
+    main > section.titleNText{
+        width: 38%;
+    }
+    
+    /*    formatting of text itself*/
+    section.titleNText p{
+        line-height: 155%;
+    }
+    
+    /*    harmful year of roster*/
+    body.harmful section h1{
+        left: 5.5%;
+    }
+    
+    /*    roster table*/
+    body.harmful > section > section > table{
+        width: 100%;
+    }
+    
+    /************************************************About*/
+    
+    /*    overall table of results*/
+    body.about section table{
+        width: 55%;
+    }
+    
+    /*    width of the first part of the table, the years*/
+    body.about section table tr td:nth-of-type(1){
+        width: 1%;
+    }
+    
+    /*    width of the second part of the table, the specific results*/
+    body.about section table tr td:nth-of-type(2){
+        width: 5%;
+    }
+    /************************************************Contact*/
+    
+    /*    orientation of map when zoomed in*/
+    body.contact main img.mapZoomed{
+        object-position: -120vh -73vh;
+    }
+    
+    
+    /************************************************Footer*/
+    footer nav{
+        margin-top: .75%;
+        margin-right: 1%;
+    }
+}
+
+
+@media screen and (max-width:1440px) and (min-width:1281px){
+    /************************************************Styling*/
+    /************************************************Header*/
+    
+    /*    making sure header text is in line with yuk face icon*/
+    header div{
+        margin-top: .5%;
+    }
+    
+
+    /************************************************Homepage*/
+    
+    /*    photo credit text*/
+    .photoCredit{
+        font-size: 13px;
+    }
+    
+    /*    text block in the bio section*/
+    section.bio section div{
+        width: 65%;
+    }
+    
+    /*    youtube video on scrolling page*/
+    section.video iframe{
+        height: 82%;
+        width: 78%;
+    }
+    
+    /*first title on the right side for contact page*/
+    section#contactPage section h4{
+        margin-top: 16.5%;
+    }
+    
+    /************************************************Roster*/
+
+    
+    /************************************************Media*/
+
+    /*    title: more videos*/
+    body.media article section:nth-of-type(2) section h3{
+        margin-bottom: 2.5%;
+    }
+    /*video icon in more video section*/
+    body.media > article#videoLink > section:nth-of-type(2) > section > article > div > div > img{
+        height: 7%;
+        width: 7%;
+    }
+
+    /************************************************Harmful*/
+
+    /*    text block at top of page*/
+    main > section.titleNText{
+        width: 42%;
+    }
+
+    /*    roster table*/
+    body.harmful > section > section > table{
+        width: 100%;
+    }
+
+    /************************************************About*/
+    /************************************************Contact*/
+    
+    /*    orientation of map when zoomed in*/
+    body.contact main img.mapZoomed{
+        object-position: -123vh -73vh;
+    }
+    
+    /*    orientation of small yuk location*/
+    body.contact main div .yukLocationReveal{
+        top: 39.25vh;
+        left: 35vh;
+    }
+    
+    /************************************************Footer*/
+    footer nav{
+        margin-right: 1%;
+        margin-top: .75%;
+    }
+
+}
+
+
+@media screen and (max-width: 800px) {
+    /************************************************Styling*/
+
+    
+    body.media ::-webkit-scrollbar {
+      height: 4px;    
+    }
+
+    /* Track */
+    body.media ::-webkit-scrollbar-track {
+      background: rgba(255,255,255,.25); 
+      border-radius: 2px;
+    }
+
+    /* Handle */
+    body.media ::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,.5);
+      border-radius: 2px;
+
+    }
+
+    /* Handle on hover */
+    body.media ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255,255,255,.75); 
+    }
+    
+    .buttonOutline, .buttonSolid{
+        padding: 15px 50px 15px 50px;
+    }
+    
+    /*    past roster button placement*/
+    body.roster > main > div:nth-of-type(1){
+        left: 0;
+        margin-left: 5%;
+        top: 17%;
+        width: 188px;
+    }
+    
+    /*    the past roster year button, dropdown*/
+    div div#pastRosterMenu a{
+        line-height: 330%;
+    }
+
+    /************************************************Header*/
+
+    /************************************************Homepage*/
+
+    /*    container with h1 and h5*/
+    body.index > main > section.titleInfo > div{
+        width: 60%;
+        margin-left: 4%;
+    }
+    
+    /*container for yuk face & titles*/
+    main > section.titleInfo{
+        margin-left: 8.75%;
+        margin-top: 9.5%;
+        animation: 2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s 1 slideInFar;
+    }
+    
+    main > section.titleInfo > aside{
+        width: 16%;
+        margin-top: .825%;
+    }
+
+    /*the literal yuk face*/
+    main aside img.yukFace{
+        width: 100%;
+    /*
+            transform: scale(1);
+            transition: .5s;
+            animation: 2.5s ease-out 0s .5 wobble;
+    */
+    }
+    
+    
+    /*"Mr. Yuk" main title*/
+    body main h1{
+        margin-bottom: 2%;
+    }
+
+    /*standard hover effect fun time*/
+    main aside img.yukFace:hover{
+        transform: scale(1.125);
+        transition: .25s;
+    }
+
+    main img.secondaryPhoto{
+        display: block;
+    }
+
+
+    /*holding container for yuk face + white circle*/
+    #circleBox{
+        position: absolute;
+        height: 100vh;
+        top: 0;
+        object-fit: contain;
+        overflow: hidden;
+    }
+
+    /*the white circle of expansion*/
+    span.whiteCircle{
+        position: absolute;
+        top: 20%;
+        left: 16.5%;
+        background-color: white;
+        opacity: .4s; 
+        height: 0px;
+        width: 0px;
+        border-radius: 50%;
+        overflow: hidden;
+        object-fit: cover;
+        z-index: 20;
+    }
+    
+    /*from down left to upper right, GET SOME*/
+    @keyframes panOut{
+        0%{
+            height: 250%;
+            width: 200%;
+            bottom: 0;
+            left: 0;
+            object-position: 0px 0px;
+        }
+
+        100%{
+            height: 125%;
+            width: 100%;
+            bottom: 0;
+            object-position: -200px 0px;
+            left: 0;
+        }
+    }
+
+    /*    image of Gu for landing page*/
+    body.index main img.mainPhoto:nth-of-type(2){
+        object-position: 50%;
+    }
+
+    /*"Mr. Yuk" main title*/
+    body main h1{
+/*
+        position: absolute;
+        top: 12%;
+*/
+
+    }
+
+    /*"Carnegie Mellon Men's Ultimate" title*/
+    body.index main h5{
+/*
+        position: absolute;
+        top: 56%;
+*/
+
+
+    }
+    
+    /*    text block with bio itself*/
+    section.bio section div{
+        width: 85%;
+    }
+    
+    /*    button for more results*/
+    section.bio section div a{
+        margin-top: 6%;
+    }
+    
+    
+    /*    youTube video itself*/
+    section.video iframe{
+        height: 58.5vw;
+        width: 90vw;
+        padding-bottom: 4%;
+    }
+    
+    /*    want to join our email list, contact title on left*/
+    section#contactPage aside h3{
+        margin-top: 9.125vw;
+        width: 60%;
+    }
+    
+    /*    input box for their email*/
+    section#contactPage > section > form > div > input{
+        width: 60%;
+    }
+    
+    
+    
+    /*    team quote, container with text + parenthesis*/
+    section#teamPhoto > div{
+        width: 90vw;
+        padding-top: 30%;
+    }
+    
+    /*    the text container itself*/
+    .quoteContainer > div{
+        width: 60vw;
+    }
+
+    /************************************************Roster*/
+    /* fixes some spacing between the roster cards*/
+    body.roster > section > section{
+        justify-content: space-around;
+    }
+    /* resizes the nav arrow, was too small before*/
+    body main img.navArrow{
+        width: 7%;
+    }
+    
+    /*    the img of the roster, blown up */
+    body.roster main img.mainPhoto{
+        width: 170%;
+    }
+    
+    /*    makes placeholder div's dissapear*/
+    .rosterCard.ghostCard{
+        display: none;
+    }
+
+    /************************************************Media*/
+
+    /*    the start of it all*/
+    body.media{
+        scroll-snap-align: unset;
+    }
+    
+    body.media > main > section > div{
+        scroll-snap-align: unset;
+    }
+    
+    body.media > article#videoLink > section:nth-of-type(1){
+        scroll-snap-align: unset;
+    }
+    
+    body.media article#videoLink section:nth-of-type(2){
+        scroll-snap-align: unset;
+    }
+    
+    body.media > article#photoLink > section:nth-of-type(1){
+        scroll-snap-align: unset;
+    }
+    
+    body.media article#photoLink section:nth-of-type(2){
+        scroll-snap-align: unset;
+    }
+    
+    /*    larger containers for buttons + text on that button*/
+    body.media > main > section{
+        position: relative;
+        height: 50vh;
+    }
+    
+    /* containers for buttons of videos and photos*/
+    body.media > main > section > div{
+        height: 50vh;
+        width: 100%;
+    }    
+
+    /*    repositioning within the video button*/
+    .videoButton{
+        width: 100%;
+        height: unset;
+        object-position: 0px -60vw;
+        transition: 1s;
+    }
+    
+    /*    repositioning within the photo button*/
+    .photoButton{
+        width: 110%;
+        height: unset;
+        object-position: 0px -10vw;
+        transition: 1s;
+    }
+    
+    
+    .videoButton:hover{
+        cursor: pointer;
+        width: 104%;
+        height: unset;
+        object-position: 0px -60vw;
+        transition: .5s;
+    }
+
+    .photoButton:hover{
+        cursor: pointer;
+        width: 104%;
+        height: unset;
+        object-position: 0px -10vw;
+        transition: .5s;
+    }
+    
+    /*    text label for each button*/
+    body.media main section h2{
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: block;
+        margin-bottom: 50%;
+    }
+    
+    /*    specific override for old element*/
+    body.media main section:nth-of-type(2) h2{
+        left: 0;
+    }
+    
+    /*    youTube video new dimensions*/
+    body.media article#videoLink section section iframe{
+        width: 90vw;
+        height: 53.582vw;
+    }
+    
+    
+    /*    sidebar with information, putting it below the video*/
+    body.media article#videoLink section section aside{
+        width: 90vw;
+        height: calc(700px - 69vw);
+        margin-left: 0%;
+        margin-top: 2%;
+        overflow: unset;
+    }
+    
+    /*    the video title*/
+    body.media > article > section > section > aside > h3{
+        margin-bottom: 1.5%;
+    }
+    
+    /*    general package with of the video play icon and the video length*/
+    body.media > article#videoLink > section > section > aside > div{
+        float: left;
+        width: 10%;
+        margin-top: .5%;
+        margin-right: 2%;
+    }
+    
+    /*    the video play icon*/
+    body.media > article#videoLink > section > section > aside > div > img{
+        margin-right: 10%;
+        margin-top: 0%;
+        width: 30%;
+        height: 30%;
+    }
+    
+    /*    who edited the video*/
+    body.media > article#videoLink > section > section > aside > p{
+        margin-top: 0%;
+    }
+    
+    /*    video description*/
+    body.media > article#videoLink > section > section > aside > a{
+        overflow: auto;
+    }
+
+    /*    more videos title*/
+    body.media article section:nth-of-type(2) section h3{
+        margin-bottom: 3%;
+    }
+    
+    /*    video play icon in the more video section*/
+    body.media > article#videoLink > section:nth-of-type(2) > section > article > div > div > img{
+        height: 12%;
+        width: 12%;
+        margin-top: 1.5%;
+    }
+    
+    /*    the whole gallery main image*/
+    body.media > article#photoLink > section:nth-of-type(1) > section > div{
+        height: 60vw;
+        width: unset;
+        margin-bottom: 1%;
+    }
+    
+    /*    reorient clickable arrow buttons*/
+    .galleryArrowContainer{
+        top: 50%;
+    }
+    
+    /*    the sidebar for photos*/
+    body.media article#photoLink section:nth-of-type(1) aside{
+        width: 100%;
+        height: unset;
+        margin-left: 0%;
+    }
+    
+    /*    main title for photo album*/
+    body.media article#photoLink section:nth-of-type(1) section aside div h3{
+        display: inline-block;
+        margin-bottom: 0%; 
+        margin-right: 3%;
+        font-size: 3.75vw;
+    }
+    
+    /*    holds the photo album icon and number of album photos*/
+    body.media article#photoLink section:nth-of-type(1) section aside div div{
+        display: inline-block;
+        width: 10%;
+        margin-top: .5%;
+    }
+    
+    /*    photo album icon*/
+    body.media article#photoLink section:nth-of-type(1) section aside div div img{
+        display: inline-block;
+        width: 35%;
+        height: 35%;
+        margin-right: 12%;
+        vertical-align: middle;
+    }
+    
+    /*    the literal number of how many photos are in there*/
+    .photoGalleryQuantity{
+        display: inline-block;
+        font-size: 2vw;
+    }
+    
+    /*    location of the photos, getting the axe*/
+    body.media > article#photoLink > section:nth-of-type(1) > section > aside > div > a{
+        display: inline-block;
+        margin-right: 2%;
+        font-size: 2vw;
+    }
+    
+    /*    who took the photos*/
+    .photoGalleryPhotographer{
+        display: inline-block;
+        line-height: 110%;
+        font-size: 2.25vw;
+    }
+    
+    /*    container with photo thumbnails*/
+    body.media article#photoLink section:nth-of-type(1) section aside section{
+        justify-content: flex-start;
+        height: unset;
+        width: 100%;
+        margin-top: .5%; 
+    }
+    
+    /*    the thumbnails themselves*/
+    body.media article#photoLink section:nth-of-type(1) section aside section img{
+        margin-top: 0%;
+        height: unset;
+        width: 13.28%;
+        margin-right: 1%;
+        margin-bottom: 1%;
+    }
+    
+    
+    /*    more photos album photo icon*/
+    body.media > article#photoLink > section:nth-of-type(2) > section > article > div > div > img{
+        width: 18%;
+    }
+
+    /************************************************Harmful*/
+    
+    /*    text at the top of the page*/
+    main > section.titleNText{
+        width: 75%;
+    }
+    
+    /*    block of text about harmful*/
+    section.titleNText p{
+        margin-top: 3.25%;
+    }
+    
+    /*    throwing up kid image, enlarging*/
+    body.harmful main img:nth-of-type(1){
+        width: 55%;
+    }
+    
+    /*    for the harmful spreadhseet, removes the "hometown" column*/
+    body.harmful section table tr td:nth-of-type(6){
+        display: none;
+    }
+
+    /************************************************About*/
+    
+    /*    half yuk face, enlarge it*/
+    body.about main img:nth-of-type(1){
+        width: 70%;
+    }
+    
+    /*    makes the table wider, by increasing... the.. width to 100%*/
+    body.about section table{
+        width: 100%;
+    }
+
+    /************************************************Contact*/
+    
+    
+    /*map resting state*/
+    body.contact main img.mapNormal{
+    object-position: -20vw -4vw;
+    }
+
+    /*map zoomed in around CMU*/
+    body.contact main img.mapZoomed{
+        object-position: -198vw -97vw;;
+    }
+
+    body.contact main div .yukLocation{
+        left: 115px;
+    }
+
+    body.contact main div .yukLocationReveal{
+        left: 115px;
+    }
+    
+    /*    part with the actual text*/
+    body.contact main aside{
+        width: 66%;
+    }
+    
+    /*    the trigger for it all!*/
+    .containerButton{
+        width: 33%;
+    }
+    
+    /*    text under the main title "about ultimate please"*/
+    body.contact main aside section a{
+        width: 90%;
+    }
+
+
+    /************************************************Footer*/
+
+    
+
+
+/*just for the harmful spreadsheet, removes the "major" column*/
+@media screen and (max-width: 650px) {
+        body.harmful section table tr td:nth-of-type(5){
+        display: none;
+    }
+    
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+    /************************************************Styling*/
+    
+    p{
+        font-size: 1em;
+    }
+    
+    main{
+        scroll-snap-align: unset;
+    }
+    
+
+    /************************************************Header*/
+    /*    hides the usual header*/
+    header > a, header > div:nth-of-type(1){
+        display: none;
+    }
+    
+    /*    the "tab menu" aka better than the hamburger menu*/
+    header > .mobileMenu{
+        display: flex;
+        flex-wrap: wrap;
+        position: fixed;
+        width: 100%;
+        height: 70px;
+        left: 0;
+        bottom: 0;
+        margin: 0;
+        border: 1px solid #202020;
+        -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+        -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+        -o-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+        -ms-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+        box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+
+    }
+    
+    
+    header > .mobileMenu:hover{
+        cursor: pointer;
+    }
+
+    
+    
+    /*    the mobile menu individual buttons*/
+    .mobileMenu > div{
+        width: 25%;
+        margin: 0;
+        background-color: #333333;
+        position: relative;
+    }
+    
+    .mobileMenu > div:hover{
+        cursor: pointer;
+    }
+    
+    
+    /*    container for the icons and text, same size as individual buttons*/
+    .mobileMenu .tabHolder{
+        position: absolute;
+        width: 50px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        top: 40%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    
+    
+    /*    the text for each menu item*/
+    .mobileMenu div section > a{
+        display: block;
+        text-align: center;
+        font-size: 13px;
+        margin: 0;
+    }
+    
+    /*    mobile menu icons, they're white*/
+    .mobileMenu .tabHolder img{
+        display: block;
+        width: 70%;
+        margin: auto;
+        padding-bottom: 3%;
+    }
+    
+    .mobileMenu .divLink{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        text-decoration: none;
+        /* Makes sure the link doesn't get underlined */
+        z-index: 10;
+        /* raises anchor tag above everything else in div */
+        opacity: 0;
+        /*workaround to make clickable in IE */
+        filter: alpha(opacity=0);
+        /*workaround to make clickable in IE */
+    }
+    
+    /*    the hidden tab menu itself*/
+    .dropUpMenu{
+        width: 25%;
+        margin: 0;
+    }
+    
+    
+    /*    the tab menu items inside the hidden tab*/
+    .dropUPmenu > div{
+        position: relative;
+        height: 70px;
+        width: 100%;
+        margin: 0;
+        background-color: #333333;
+
+    }
+    
+
+    .tabMenuHiddenSAF{
+        opacity: 0;
+        pointer-events:none;
+        display: block;
+    }
+    
+    
+    .tabMenuShownSAF{
+        opacity: 1;
+        position: absolute;
+        display: block;
+        pointer-events: auto;
+        bottom: 70px;
+        margin: 0;
+        width: 100%;
+    }
+    
+
+    .tabMenuHidden{
+        display: none;
+    }
+    
+    
+    .tabMenuShown{
+        position: fixed;
+        display: block;
+        bottom: 70px;
+        margin: 0;
+        width: 25%;
+    }
+
+    
+    /************************************************Homepage*/
+    /*    main title chunck*/
+    main > section.titleInfo{
+        margin: 5%;
+        margin-top: 10%;
+    }
+    
+    .imageSandBox{
+        opacity: 0;
+        display: none;
+    }
+    
+    /*    secondary image of Gu*/
+    body.index main img.mainPhoto:nth-of-type(2){
+        display: block;
+        object-position: 50%;
+    }
+    
+    span.whiteCircle{
+        top: 17%;
+        left: 16.5%;
+    }
+    
+    main > section.titleInfo > aside{
+        width: 23%;
+        margin-top: 2.5%;
+    }
+    
+    /*    large yuk face*/
+    main aside img.yukFace{
+        width: 100%;
+    }
+
+    
+    /*    container for both CTA buttons and "or"*/
+    body.index > main > div:nth-of-type(2){
+        top: 55%;
+    }
+    
+    /*    button for watching highlights yay*/
+    #highlightsButton{
+        display: block;
+        width: 125px;
+        margin: auto;
+        margin-bottom: 4%;
+    }
+    
+    /*    button for that email list even more yay*/
+    #emailListButton{
+        display: block;
+        width: 125px;
+        margin: auto;
+        margin-top: 4%;
+    }
+    
+    /*    actual image on the homescreen*/
+    body.index main img.mainPhoto{
+        object-position: 20% 0%;
+    }
+    
+    body.index main img.secondaryPhoto{
+        object-position: 55% 0%;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+    }
+    
+    
+    body.index .bio{
+        scroll-snap-align: unset;
+        overflow: hidden;
+    }
+
+    /*    text on the left side about what is mr. yuk*/
+    body.index .bio aside{
+        position: relative;
+        height: 24vh;
+        width: 100%;
+    }
+    
+    /*    text that used to be inside that left side*/
+    section.bio aside h3{
+        text-align: center;
+        margin-right: unset;
+    }
+    
+    section.bio aside h3:nth-of-type(1){
+        padding-top: 9.825vw;
+        margin-top: unset;
+    }
+    
+    /*    container with that grey background, about to be turned off*/
+    section.bio section{
+        background-color: unset;
+        height: 76vh;
+        width: 100%;
+    }
+    
+    /*    the green image from the showcase game*/    
+    section.bio section img{
+        float: unset;
+        position: absolute;
+        width: unset;
+        height: 100%;
+        z-index: -1;
+    }
+    
+    /*    the bio text container*/
+    section.bio section div{
+        float: unset;
+        width: unset;
+        margin: 0;
+        padding: 5%;
+        margin-top: 5%;
+        
+    }
+    
+    /*    general section containing the video*/
+    body.index section.video{
+        scroll-snap-align: unset;
+        height: calc(100vw - 40px);
+    }
+    
+    /*    the video frame itself*/
+    body.index section.video iframe{
+        padding-top: 5%;
+    }
+    
+    /*    beginning of all the contact page stuff*/
+    section#contactPage{
+        scroll-snap-align: unset;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    /*    container with image of dylan laying out + text*/
+    section#contactPage aside{
+        display: block;
+        height: calc(100vw - 40px);
+        width: 100%;
+    }
+    
+    /*    the actual image of Dylan*/
+    section#contactPage aside img{
+        height: 180%;
+        object-position: 75% -70vw;
+    }
+    
+    /*    text title about the form being easier than laying out*/
+    section#contactPage aside h3{
+        width: unset;
+        right: unset;
+        margin: auto;
+        margin-top: 30vw;
+        left: 0;
+        right: 0;
+        text-align: center;
+        
+    }
+    
+    /*    contact form section*/
+    section#contactPage section{
+        display: block;
+        height: 75vh;
+        width: 100%;
+    }
+    
+    /*    title for top of contact form about it being easier than laying out*/
+    section#contactPage section h4{
+        margin-top: 8%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    /*    the container with the actual questions*/
+    section#contactPage > section > form{
+        position: relative;
+        z-index: 1000;
+        margin-left: 5%;
+        margin-top: 5%;
+        
+    }
+    
+    /*    first question about email*/
+    section#contactPage > section > form > div:nth-of-type(1){
+        margin-bottom: 5%;
+    }
+    
+    /*    box to type in email*/
+    section#contactPage > section > form > div:nth-of-type(1) textarea{
+        width: 85%;
+    }
+    
+    
+    /*    second question about email*/
+    section#contactPage > section > form > div:nth-of-type(2){
+        margin-bottom: 9%;
+    }
+    
+    /*    subscribe box!*/
+    section#contactPage section form div button.buttonSolid{
+        width: 180px;
+    }
+    
+    /*    general container for bottom text and button*/
+    section#contactPage > section > form:nth-of-type(2){
+        margin-top: 10%;
+        
+    }
+    
+    /*    text: go to question/contact page*/
+    section#contactPage > section > form:nth-of-type(2) > p{
+        margin-bottom: 3%;
+    }
+    
+    /*    the testimonial quote section*/
+    #teamPhoto{
+        scroll-snap-align: unset;
+        height: 60vh; 
+        position: relative;
+    }
+    
+    /*    make the parenthesis go away*/
+    section#teamPhoto > div > img.parenthesis{
+        display: none;
+    }
+    
+    /*    container which used to have the text and the parenthesis */
+    section#teamPhoto > div{
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        margin-bottom: 10%;
+        padding: unset;
+    }
+    
+    /*    container with the text and who the quote is by*/
+    .quoteContainer > div{
+        width: 100%;
+        margin: 0%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        padding-top: 0%;
+        
+    }
+    
+
+    /************************************************Roster*/
+    
+    /*    main roster title*/
+    body.roster main h1{
+        top: 0;
+        left: 0;
+        margin-top: 10%;
+        margin-left: 5%;
+    }
+    
+    /*    past roster button placement*/
+    body.roster > main > div:nth-of-type(1){
+        position: relative;
+        top: 0;
+        margin-top: 6%;
+        margin-left: 5.5%;
+    }
+
+    
+    /*    the nav arrow, y'know*/
+    body.roster main img.navArrow{
+        display: none;
+    }
+    
+
+    /*    the img of the roster, blown up */
+    body.roster main img.mainPhoto{
+        width: 400%;
+    }
+    
+    /*    start of the roster section with the cards*/
+    body.roster > section{
+        scroll-snap-align: unset;
+    }
+    
+    /*    inner container to the one before, controls the margins*/
+    body.roster > section > section{
+        margin-top: 10%;
+        margin-bottom: 32%;
+    }
+    
+    /*    move it under the roster*/
+    .rosterPlaceholderText{
+        position: relative;
+        width: 90%;
+        top: 0;
+        left: 0;
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+    
+    /*    individual cards for roster, generlaized dimensions*/
+    body.roster > section > section > div.rosterCard{
+        margin-bottom: 5%;
+    }
+    
+    /*    makes all the rosters already color images for mobile*/
+    .BnWrosterIMG{
+        display: none;
+    }
+    
+    /*    makes placeholder div's dissapear*/
+    .rosterCard.ghostCard{
+        display: none;
+    }
+
+    /************************************************Media*/
+    
+    /*    repositioning of the "photo" image within the buton*/
+    .photoButton{
+        width: 200%;
+        height: unset;
+        object-fit: cover;
+        object-position: -100vw -40vw;
+    }
+    
+    .photoButton:hover{
+        width: 150%;
+        object-position: -200px -10vw;
+    }
+    
+    .videoButton:hover{
+        width: 120%;
+    }
+    
+    /*    overall video link*/
+    body.media > article#videoLink > section:nth-of-type(1){
+        overflow:hidden;
+    }
+    
+    /*    youtube/vimeo video container*/
+    body.media article#videoLink section section iframe{
+        margin-top: 2%;
+    }
+    
+    /*    text box for the video*/
+    body.media article#videoLink section section aside{
+        margin-top: 4%;
+    }
+    
+    body.media > article#videoLink > section > section > aside > a{
+        font-size: 1em;
+    }
+    
+    
+    /*    container with video play icon and video length*/
+    body.media > article#videoLink > section > section > aside > div{
+        display: block;
+        float: unset;
+        width: 100%;
+        margin-top: 2%;
+        margin-bottom: 3%;
+    }
+    
+    /*    video play icon, element itself*/
+    body.media > article#videoLink > section > section > aside > div > img{
+        display: inline-block;
+        width: 6%;
+        margin-right: 2%;
+        vertical-align: middle;
+        margin-bottom: 1.25%;
+    }
+    
+    /*    video length, element itself*/
+    body.media > article#videoLink > section > section > aside > div > a{
+        display: inline-block;
+        width: 13%;
+    }
+    
+    /*    video editor*/
+    body.media > article#videoLink > section > section > aside > p{
+        display: block;
+    }
+    
+    /*    video description*/
+    body.media > article#videoLink > section > section > aside > a{
+        display: block;
+        height: 65%;
+    }
+    
+    
+    /*    more videos inner container from the main container, this one has a margin*/
+    body.media article section:nth-of-type(2) section{
+        padding-right: 0%;
+    }
+    
+    /*    all the thumbnails together*/
+    body.media > article#videoLink > section:nth-of-type(2) > section > article{
+        height: 90vh;
+        justify-content: left;
+        overflow: auto;
+    }
+    
+    /*    individual thumbnails, generalized though*/
+    body.media > article#videoLink > section:nth-of-type(2) > section > article > div{
+        width: 140px;
+        margin-right: 4%;
+        margin-bottom: 10%;
+    }
+    
+    /*    information about video length*/
+    body.media > article > section:nth-of-type(2) > section > article > div > div{
+        display: none;
+    }
+    
+    
+    /*    whole gallery container*/
+    body.media article section:nth-of-type(1) section{
+        overflow: hidden;
+    }
+    
+    /*    main photo, gallery*/
+    body.media > article#photoLink > section:nth-of-type(1) > section > div{
+        margin-top: 2%;
+    }
+    
+    /*    side section with thumbnails and description*/
+    body.media article#photoLink section:nth-of-type(1) aside{
+        height: calc(50% - 2vw);
+    }
+    
+    /*    photo gallery title*/
+    body.media article#photoLink section:nth-of-type(1) section aside div h3{
+        display: block;
+        margin-bottom: 1%;
+        font-size: 30px;
+    }
+    
+    /*    container with album icon and number of photos*/
+    body.media article#photoLink section:nth-of-type(1) section aside div div{
+        display: block;
+        width: 100%;
+    }
+    
+    /*    photo album icon*/
+    body.media article#photoLink section:nth-of-type(1) section aside div div img{
+        width: 8%;
+        margin-right: 2%;
+        margin-bottom: .5%;
+    }
+    
+    /*    the number*/
+    .photoGalleryQuantity{
+        font-size: 1em;
+    }
+    
+    /*    photo location*/
+    body.media > article#photoLink > section:nth-of-type(1) > section > aside > div > a{
+        display: block;
+        font-size: 1em;
+        margin-top: 1%;
+        margin-bottom: 3%;
+    }
+    
+    /*    self explanatory*/
+    .photoGalleryPhotographer{
+        display: block;
+        font-size: 1em;
+        margin-bottom: 1%;
+    }
+    
+    /*    thumbnail container*/
+    body.media article#photoLink section:nth-of-type(1) section aside section{
+        height: calc(50% - 2vw);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 2%;
+    }
+    
+    /*    the thumbnails themselves*/
+    body.media article#photoLink section:nth-of-type(1) section aside section img{
+        margin-bottom: 2%;
+        width: 65px;
+        height: 50px;
+        margin-right: 0%;
+    }
+    
+
+    
+    /*    general container for the whole more photos section*/
+    body.media article#photoLink section:nth-of-type(2){
+        height: 100vh;
+    }
+    
+    /*    container with all the thumbnails, how they're organized*/
+    body.media > article#photoLink > section:nth-of-type(2) > section > article{
+        justify-content: left;
+        
+    }
+    
+    /*    each actual thumbnail*/
+    body.media > article#photoLink > section:nth-of-type(2) > section > article > div{
+        width: 100px;
+        height: 75px;
+        margin-right: 5%;
+    }
+    
+    /*    evens out the last thumbnail back to normal*/
+    body.media > article > section:nth-of-type(2) > section > article > div:nth-of-type(8) > p{
+        margin-top: 6%;
+    }
+    
+    body.media > article#photoLink > section:nth-of-type(2) > section > article > div:nth-of-type(8) > p{
+        margin-top: 4.5%;
+    }
+
+    
+    /*    video title*/
+    body.media > article#photoLink > section:nth-of-type(2) > section > article > div > p{
+        margin-top: 0%;
+    }
+
+/*    ***********************************************Harmful*/
+    
+    
+    body.harmful main{
+        scroll-snap-align: unset;
+    }
+    
+    /*    main title and text block*/
+    main > section.titleNText{
+        position: absolute;
+        width: unset;
+        margin-top: 10%;
+        padding-top: 0;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    /*    the text inside of the above block*/
+    section.titleNText p{
+        width: 100%;
+    }
+    
+    /*        the nav arrow, y'know*/
+    body main img.navArrow{
+        width: 18%;
+        top: 80%;
+    }
+    
+    /*    greyed out image of the boy throwing up*/
+    body.harmful main img:nth-of-type(1){
+        width: 95%;
+        margin-bottom: 0%;
+        padding-bottom: 0%;
+        box-sizing: border-box;
+        bottom: 0;  
+        transform:translateY(55px);
+    }
+    
+        
+    /*    harmful roster photo container*/
+    .harmfulRosterPhoto div:nth-of-type(2){
+        position: absolute;
+        top: 100%;
+        z-index: 1;
+    }
+    
+    /*    harmful team photo itself*/
+    .harmfulRosterPhoto div:nth-of-type(2) > img:nth-of-type(1){
+        height: 100%;
+        width: unset;
+        object-position: unset;
+        
+    }
+    
+    /*    roster year*/
+    body.harmful section h1{
+        position: relative;
+        top: unset;
+        margin-top: 10%;
+        left: 0;
+        margin-left: 5%;
+        z-index: 2;
+    }
+    
+    /*    past roster button*/
+    body.harmful > section > div:nth-of-type(1){
+        position: relative;
+        top: unset;
+        width: 188px;
+        margin-top: 6%;
+        left: 0;
+        right: unset;
+        margin-left: 5.5%;
+        z-index: 2;
+    }
+    
+    /*    for spacing on dropdown menu items*/
+    div div#pastRosterMenuHarmful a{
+        line-height: 330%;
+    }
+    
+    /*    the text for if there isn't a roster photo*/
+    .harmfulPlaceholderText{
+        position: relative;
+        width: 90%;
+        top: 0;
+        left: 0;
+        margin-top: 5%;
+        margin-left: 5%;
+        z-index: 2;
+    }
+    
+        
+    /*    general section of the harmful spreadsheet*/
+    body.harmful > section > section{
+        padding-top: 10%;
+        padding-bottom: 30%;
+    }
+    
+    /*    harmful spreadsheet, numbers column*/
+    body.harmful section table tr td:nth-of-type(1){
+        display: none;
+    }
+
+    /*    the overall harmful roster table*/
+    body.harmful section  section table td{
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+    
+    /*    name column in particular*/
+    body.harmful section table tr td:nth-of-type(2){
+        width: 18%;
+        padding-right: 1%;
+    }
+    
+    
+
+    /************************************************About*/
+    
+    /*    general container with all those results*/
+    body.about > section > section{
+        padding: 5%;
+        padding-bottom: 30%;   
+    }
+    
+    /*    years column*/
+    body.about section table tr td:nth-of-type(1){
+        width: 3.5%;
+    }
+    
+    /*    yuk face itself*/
+    body.about main img:nth-of-type(1){
+        width: 100%;
+    }
+
+    /************************************************Contact*/
+    
+    /*    container with everything*/
+    body.contact{
+        height: 140vh;
+        overflow: auto;
+    }
+    
+    body.contact main{
+        height: 140vh;
+    }
+    
+    /*    clickable element for map animation*/
+    .containerButton{
+        display: none;
+    }
+    
+    /*    container with all the maps and images*/
+    body.contact > main > div{
+        height: 140vh;
+    }
+    
+    /*    the partial gradient, flippping it for the words*/
+    body.contact > main > div > img:nth-of-type(4){
+        transform: scaleX(-1);
+    }
+    
+/*    map of pittsburgh, white*/
+    body.contact main img.mapNormal{
+        object-position: -45vw 0vw;
+        height: 150%;
+    }
+    
+    /*    yuk location spot*/
+    body.contact main div .yukLocation{
+        display: none;
+    }
+    
+    /*    the actual contact form element, big container*/
+    body.contact main aside{
+        width: 100%;
+        height: 115%;
+    }
+    
+    /*    container which holds all of the stuff*/
+    body.contact main aside section{
+        padding-top: 5%;
+        margin: 5%;
+    }
+    
+    /*    main title h1*/
+    body.contact main aside h1{
+        margin-bottom: 3%;
+    }
+    
+    body.contact main aside section form div p{
+        margin-bottom: .75%;
+    }
+    
+    /*    those input boxes*/
+    body.contact > main > aside > section > form > div:nth-of-type(1) > textarea, div:nth-of-type(2) > textarea{
+        width: 70%;
+    }
+    
+    /*    main text area input*/
+    body.contact > main > aside > section > form > div:nth-of-type(3) > textarea{
+        width: 97.5%;
+    }
+    
+    /*    send message button container*/
+    body.contact > main > aside > section > form > .contactButtonPlaceholder{
+        width: unset;
+    }
+    
+    /*    send message button itself*/
+    body.contact > main > aside > section > form > div > button.buttonSolid{
+        height: unset;
+        width: unset;
+        margin-top: 8%;
+    }
+
+
+    /************************************************Footer*/
+    footer{
+        display: none;
+    }
+    
+
 }
