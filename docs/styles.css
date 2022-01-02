@@ -2456,7 +2456,7 @@ body.harmful section section a{
 /************************************************About*/
 
 /*highlight menu nav element after clicked*/
-body.about header div a:nth-of-type(4){
+body.about header div a:nth-of-type(3){
     color: #010039;
 }
 
