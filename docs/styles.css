@@ -47,10 +47,22 @@ table {
 	border-spacing: 0;
 }
 
-/**Tribe Custom Code**/
+/********************Tribe Custom Code********************/
 .topnav {
     background-color: navy;
     overflow: hidden;
+}
+
+.homeLogo {
+    padding: 0%;
+    margin-left: 1%;
+    margin-top: 0.5%;
+}
+
+.menuBar {
+    padding: 1%;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -239,21 +251,27 @@ body{
 header{
     position: absolute;
     display: flex;
-    width: 90%;
-    margin-left: 1%;
-    margin-top: 1%;
+    width: 100%;
     z-index: 10000;
 }
 
 header a, div{
     display: inline-block;
+    padding: 0%;
+    margin: 0%;
+}
+
+header a{
+    margin-left: 1%;
+    margin-top: 1%;
 }
 
 /*block of page links*/
 header div{
     width: 100%;
-    margin-left: 3%;
-    margin-top: .75%;
+    padding: 1%;
+    display: flex;
+    align-items: center;
 }
 
 /*the individual page links*/
@@ -2839,7 +2857,9 @@ footer nav a{
     /************************************************Header*/
     /*    top alignment for the header*/
     header div{
+        /*
         margin-top: .25%;
+        */
     }
     
     /************************************************Homepage*/
