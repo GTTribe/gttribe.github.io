@@ -858,6 +858,14 @@ section.bio aside h3{
     margin-right: 14%;
 }
 
+section.bio aside p{
+    opacity: .5;
+    text-align: right;
+    margin-left: 14%;
+    margin-right: 14%;
+    color: black;
+}
+
 /*left title, top spacing, by just moving the first title down*/
 section.bio aside h3:nth-of-type(1){
     margin-top: 9.825vw;
