@@ -1,1 +1,0 @@
-# gttribe.github.io
