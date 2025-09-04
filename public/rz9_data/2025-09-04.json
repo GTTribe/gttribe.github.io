@@ -1,0 +1,13 @@
+{
+  "date": "2025-09-04",
+  "teams": [
+    {
+      "team_id": "A",
+      "name": "Red",
+      "roster": ["Adam Grossberg", "Nikos Verlenden"]
+    }
+  ],
+  "results": [
+    { "team_id": "A", "reps": 9, "scores": 5 }
+  ]
+}
