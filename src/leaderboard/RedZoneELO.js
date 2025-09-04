@@ -1,31 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
 
-/**
- * RedZoneELO (no Vite version)
- * ---------------------------------
- * This version does NOT use `import.meta.glob`. Instead, it fetches a manifest
- * from `/rz9_data/manifest.json` in your PUBLIC folder and then fetches each
- * listed JSON file.
- *
- * Setup
- * 1) Put your data under: `public/rz9_data/`
- *    Example files: `public/rz9_data/2025-09-01.json`, `public/rz9_data/2025-09-03.json`
- * 2) Create: `public/rz9_data/manifest.json` listing those filenames, e.g.
- *    [
- *      "2025-09-01.json",
- *      "2025-09-03.json"
- *    ]
- * 3) JSON schema per file (your chosen schema):
- *    {
- *      "date": "YYYY-MM-DD",
- *      "teams": [{ team_id, name?, roster: ["First Last", ...] }],
- *      "results": [{ team_id, reps, scores }]
- *    }
- *
- * Notes
- * - With an empty folder OR an empty manifest, the UI will show a friendly message.
- * - We attribute each team’s reps/scores to every player on that team’s roster for that practice.
- */
 
 async function fetchManifest() {
   const res = await fetch("/rz9_data/manifest.json", { cache: "no-store" });
@@ -209,24 +183,24 @@ function EmptyState() {
         <code> public/rz9_data/manifest.json</code>.
       </p>
       <pre style={{ marginTop: 12, background: "#f8f8f8", padding: 12, borderRadius: 6, overflowX: "auto" }}>
-{`// public/rz9_data/manifest.json
-[
-  "2025-09-03.json",
-  "2025-09-05.json"
-]
+        {`// public/rz9_data/manifest.json
+        [
+        "2025-09-03.json",
+        "2025-09-05.json"
+        ]
 
-// public/rz9_data/2025-09-03.json
-{
-  "date": "2025-09-03",
-  "teams": [
-    { "team_id": "A", "roster": ["Adam Grossberg", "Sam Keller"] },
-    { "team_id": "B", "roster": ["Nina Ross", "Omar Hayes"] }
-  ],
-  "results": [
-    { "team_id": "A", "reps": 18, "scores": 11 },
-    { "team_id": "B", "reps": 18, "scores": 7 }
-  ]
-}`}
+        // public/rz9_data/2025-09-03.json
+        {
+        "date": "2025-09-03",
+        "teams": [
+            { "team_id": "A", "roster": ["Adam Grossberg", "Sam Keller"] },
+            { "team_id": "B", "roster": ["Nina Ross", "Omar Hayes"] }
+        ],
+        "results": [
+            { "team_id": "A", "reps": 18, "scores": 11 },
+            { "team_id": "B", "reps": 18, "scores": 7 }
+        ]
+        }`}
       </pre>
     </div>
   );
