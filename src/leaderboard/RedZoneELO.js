@@ -1,44 +1,52 @@
 import React, { useEffect, useMemo, useState } from "react";
 
 /**
- * RedZoneELO
+ * RedZoneELO (no Vite version)
+ * ---------------------------------
+ * This version does NOT use `import.meta.glob`. Instead, it fetches a manifest
+ * from `/rz9_data/manifest.json` in your PUBLIC folder and then fetches each
+ * listed JSON file.
  *
- * Assumptions & Setup
- * -------------------
- * 1) Put your per-practice JSON files in `src/rz9_data/` (Vite/webpack source folder, not /public).
- *    Example filenames: 2025-09-01.json, 2025-09-03.json, ...
- * 2) Each JSON follows your schema:
+ * Setup
+ * 1) Put your data under: `public/rz9_data/`
+ *    Example files: `public/rz9_data/2025-09-01.json`, `public/rz9_data/2025-09-03.json`
+ * 2) Create: `public/rz9_data/manifest.json` listing those filenames, e.g.
+ *    [
+ *      "2025-09-01.json",
+ *      "2025-09-03.json"
+ *    ]
+ * 3) JSON schema per file (your chosen schema):
  *    {
  *      "date": "YYYY-MM-DD",
  *      "teams": [{ team_id, name?, roster: ["First Last", ...] }],
  *      "results": [{ team_id, reps, scores }]
  *    }
- * 3) Because results are at the TEAM level, we attribute a team’s reps/scores to EVERY player on that team’s roster for that practice.
- *    If you later log per-attempt or per-line data, you can refine this logic.
  *
- * Works best with Vite via import.meta.glob to bundle the JSONs at build time.
+ * Notes
+ * - With an empty folder OR an empty manifest, the UI will show a friendly message.
+ * - We attribute each team’s reps/scores to every player on that team’s roster for that practice.
  */
 
-// IMPORTANT: adjust the glob path below based on where THIS file lives.
-// If RedZoneELO.js is at `src/RedZoneELO.js` and the data is at `src/rz9_data/*.json`,
-// then the relative path './rz9_data/*.json' is correct.
-// If this component is in `src/components/`, change to '../rz9_data/*.json'.
-const practiceFiles = import.meta.glob("./rz9_data/*.json", {
-  eager: true,
-  import: "default",
-});
+async function fetchManifest() {
+  const res = await fetch("/rz9_data/manifest.json", { cache: "no-store" });
+  if (!res.ok) throw new Error(`Manifest load failed: ${res.status}`);
+  return res.json();
+}
+
+async function fetchPractice(filename) {
+  const res = await fetch(`/rz9_data/${filename}`, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Practice load failed (${filename}): ${res.status}`);
+  return res.json();
+}
 
 function aggregatePlayerStats(practices) {
-  /**
-   * Returns a Map: playerName -> { scored: number, reps: number }
-   */
+  // Map: playerName -> { scored: number, reps: number }
   const playerMap = new Map();
 
   for (const p of practices) {
     if (!p || !p.teams || !p.results) continue;
 
-    // Build lookup: team_id -> roster[]
-    const teamRoster = new Map();
+    const teamRoster = new Map(); // team_id -> roster[]
     for (const t of p.teams) {
       teamRoster.set(t.team_id, Array.isArray(t.roster) ? t.roster : []);
     }
@@ -48,7 +56,6 @@ function aggregatePlayerStats(practices) {
       const reps = Number(r.reps || 0);
       const scores = Number(r.scores || 0);
 
-      // Attribute this team’s totals to each player on the roster
       for (const player of roster) {
         if (!playerMap.has(player)) playerMap.set(player, { scored: 0, reps: 0 });
         const cur = playerMap.get(player);
@@ -67,14 +74,11 @@ function toLeaderboard(playerMap) {
     const pct = reps > 0 ? scored / reps : 0;
     rows.push({ player, scored, reps, pct });
   }
-
-  // Sort by: percentage desc, reps desc, name asc
   rows.sort((a, b) => {
     if (b.pct !== a.pct) return b.pct - a.pct;
     if (b.reps !== a.reps) return b.reps - a.reps;
     return a.player.localeCompare(b.player);
   });
-
   return rows;
 }
 
@@ -82,35 +86,49 @@ function formatPct(p) {
   return (p * 100).toFixed(1) + "%";
 }
 
-function sum(nums) {
-  return nums.reduce((acc, n) => acc + n, 0);
-}
-
 export default function RedZoneELO() {
   const [practices, setPractices] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Load all JSON at build-time via Vite import.meta.glob
   useEffect(() => {
-    try {
-      const loaded = Object.keys(practiceFiles)
-        .map((path) => ({ path, data: practiceFiles[path] }))
-        .filter((f) => f.data && f.data.date)
-        // sort chronologically by date
-        .sort((a, b) => a.data.date.localeCompare(b.data.date))
-        .map((f) => f.data);
-      setPractices(loaded);
-    } catch (e) {
-      console.error(e);
-      setError("Failed to load practice data.");
-    }
+    let cancelled = false;
+    (async () => {
+      try {
+        const manifest = await fetchManifest();
+        if (cancelled) return;
+        if (!Array.isArray(manifest) || manifest.length === 0) {
+          setPractices([]);
+          setLoading(false);
+          return;
+        }
+        const loaded = [];
+        for (const file of manifest) {
+          try {
+            const data = await fetchPractice(file);
+            loaded.push(data);
+          } catch (e) {
+            console.warn(e);
+          }
+        }
+        loaded.sort((a, b) => (a?.date || "").localeCompare(b?.date || ""));
+        if (!cancelled) setPractices(loaded);
+      } catch (e) {
+        console.error(e);
+        if (!cancelled) setError("Failed to load practice data.");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const playerMap = useMemo(() => aggregatePlayerStats(practices), [practices]);
   const leaderboard = useMemo(() => toLeaderboard(playerMap), [playerMap]);
 
   const totals = useMemo(() => {
-    // Overall totals across all teams (sum once per result, not per player)
     let totalReps = 0;
     let totalScores = 0;
     for (const p of practices) {
@@ -124,15 +142,6 @@ export default function RedZoneELO() {
 
   const lastDate = practices.length ? practices[practices.length - 1].date : "—";
 
-  if (error) {
-    return (
-      <div style={{ padding: 16 }}>
-        <h2>Red Zone 9s Leaderboard</h2>
-        <p style={{ color: "crimson" }}>{error}</p>
-      </div>
-    );
-  }
-
   return (
     <div style={{ maxWidth: 900, margin: "40px auto", padding: "0 16px" }}>
       <header style={{ marginBottom: 16 }}>
@@ -145,30 +154,41 @@ export default function RedZoneELO() {
         </div>
       </header>
 
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse" }}>
-          <thead>
-            <tr>
-              <th style={th}>#</th>
-              <th style={th}>Player</th>
-              <th style={th}>Scores</th>
-              <th style={th}>Reps</th>
-              <th style={th}>Rate</th>
-            </tr>
-          </thead>
-          <tbody>
-            {leaderboard.map((row, idx) => (
-              <tr key={row.player} style={idx % 2 ? trAlt : trNorm}>
-                <td style={tdCenter}>{idx + 1}</td>
-                <td style={tdLeft}>{row.player}</td>
-                <td style={tdCenter}>{row.scored}</td>
-                <td style={tdCenter}>{row.reps}</td>
-                <td style={tdCenter}><strong>{formatPct(row.pct)}</strong></td>
+      {loading && <p>Loading practice data…</p>}
+      {!loading && practices.length === 0 && !error && (
+        <EmptyState />
+      )}
+
+      {error && (
+        <p style={{ color: "crimson" }}>{error}</p>
+      )}
+
+      {!loading && !error && practices.length > 0 && (
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse" }}>
+            <thead>
+              <tr>
+                <TH>#</TH>
+                <TH>Player</TH>
+                <TH>Scores</TH>
+                <TH>Reps</TH>
+                <TH>Rate</TH>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {leaderboard.map((row, idx) => (
+                <TR key={row.player} alt={idx % 2 === 1}>
+                  <TD center>{idx + 1}</TD>
+                  <TD>{row.player}</TD>
+                  <TD center>{row.scored}</TD>
+                  <TD center>{row.reps}</TD>
+                  <TD center><strong>{formatPct(row.pct)}</strong></TD>
+                </TR>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
 
       <footer style={{ marginTop: 16, color: "#666", fontSize: 14 }}>
         <p>
@@ -181,15 +201,56 @@ export default function RedZoneELO() {
   );
 }
 
-const th = {
-  textAlign: "left",
-  borderBottom: "2px solid #ddd",
-  padding: "10px 8px",
-  fontWeight: 600,
-  fontSize: 14,
-};
+function EmptyState() {
+  return (
+    <div style={{ padding: 16, border: "1px solid #eee", borderRadius: 8 }}>
+      <p style={{ margin: 0 }}>
+        No practices found. Add JSON files under <code>public/rz9_data/</code> and list them in
+        <code> public/rz9_data/manifest.json</code>.
+      </p>
+      <pre style={{ marginTop: 12, background: "#f8f8f8", padding: 12, borderRadius: 6, overflowX: "auto" }}>
+{`// public/rz9_data/manifest.json
+[
+  "2025-09-03.json",
+  "2025-09-05.json"
+]
 
-const tdLeft = { textAlign: "left", borderBottom: "1px solid #eee", padding: "10px 8px" };
-const tdCenter = { textAlign: "center", borderBottom: "1px solid #eee", padding: "10px 8px" };
-const trNorm = {};
-const trAlt = { background: "#fafafa" };
+// public/rz9_data/2025-09-03.json
+{
+  "date": "2025-09-03",
+  "teams": [
+    { "team_id": "A", "roster": ["Adam Grossberg", "Sam Keller"] },
+    { "team_id": "B", "roster": ["Nina Ross", "Omar Hayes"] }
+  ],
+  "results": [
+    { "team_id": "A", "reps": 18, "scores": 11 },
+    { "team_id": "B", "reps": 18, "scores": 7 }
+  ]
+}`}
+      </pre>
+    </div>
+  );
+}
+
+// Simple styled table components
+function TH({ children }) {
+  return (
+    <th style={{ textAlign: "left", borderBottom: "2px solid #ddd", padding: "10px 8px", fontWeight: 600, fontSize: 14 }}>
+      {children}
+    </th>
+  );
+}
+function TD({ children, center }) {
+  return (
+    <td style={{ textAlign: center ? "center" : "left", borderBottom: "1px solid #eee", padding: "10px 8px" }}>
+      {children}
+    </td>
+  );
+}
+function TR({ children, alt }) {
+  return (
+    <tr style={alt ? { background: "#fafafa" } : undefined}>
+      {children}
+    </tr>
+  );
+}
