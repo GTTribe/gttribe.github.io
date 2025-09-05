@@ -14,7 +14,7 @@ function App() {
         }}/>
         <Route path = '/home' element={<Home/>}/>
         <Route path='/rz9' element={<Leaderboard/>}/>
-        <Route path='/elo/generate' element={<Generate/>}/>
+        <Route path='/rz9/generate' element={<Generate/>}/>
       </Routes>
     </Router>
   );

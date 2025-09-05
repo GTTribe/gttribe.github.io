@@ -102,7 +102,7 @@ export default function Leaderboard() {
                 <TH>Player</TH>
                 <TH># Scores</TH>
                 <TH># Reps</TH>
-                <TH>Score Rate</TH>
+                <TH>Score %</TH>
                 <TH>Rating</TH>
               </tr>
             </thead>
@@ -114,7 +114,7 @@ export default function Leaderboard() {
                   <TD >{row.scored}</TD>
                   <TD >{row.reps}</TD>
                   <TD ><strong>{formatPct(row.pct)}</strong></TD>
-                  <TD >N/A</TD>
+                  <TD >{row.rating}</TD>
                 </tr>
               ))}
             </tbody>
