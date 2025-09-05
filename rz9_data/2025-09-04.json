@@ -2,12 +2,46 @@
   "date": "2025-09-04",
   "teams": [
     {
-      "team_id": "A",
-      "name": "Red",
-      "roster": ["Adam Grossberg", "Nikos Verlenden"]
+      "team_id": "1",
+      "roster": [
+        "Adithya Deepak",
+        "Dhruvsai Dhulipudi",
+        "Ethan Austin-Cruse",
+        "Jackson Armstrong",
+        "Matthew Greenberg",
+        "Neal Zeng",
+        "Philip Emry",
+        "Piss",
+        "Sam Granade",
+        "Stefan McCall"
+      ]
+    },
+    {
+      "team_id": "2",
+      "roster": [
+        "Adam Grossberg",
+        "Connor Case",
+        "David Baker",
+        "Ganden Fung",
+        "Grover Grendzinski",
+        "Jedidiah Cheng",
+        "John Davis",
+        "Keller Smith",
+        "Owen Hammond-Lee",
+        "Sam Grossberg"
+      ]
     }
   ],
   "results": [
-    { "team_id": "A", "reps": 9, "scores": 5 }
+    {
+      "team_id": "1",
+      "reps": 9,
+      "scores": 8
+    },
+    {
+      "team_id": "2",
+      "reps": 9,
+      "scores": 7
+    }
   ]
 }
