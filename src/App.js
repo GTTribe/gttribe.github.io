@@ -1,7 +1,8 @@
 import './App.css';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
-import RedZoneELO from './leaderboard/RedZoneELO';
+import Leaderboard from './leaderboard/Leaderboard';
+import Generate from './leaderboard/Generate';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
           return null;
         }}/>
         <Route path = '/home' element={<Home/>}/>
-        <Route path='/elo' element={<RedZoneELO/>}/>
+        <Route path='/rz9' element={<Leaderboard/>}/>
+        <Route path='/elo/generate' element={<Generate/>}/>
       </Routes>
     </Router>
   );

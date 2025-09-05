@@ -1,0 +1,6 @@
+.row {
+    cursor: pointer;
+}
+.row:hover {
+    outline: 1px solid #999
+}
