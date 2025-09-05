@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
-import PracticeDetails from "./PracticeDetails";
+import React, { useEffect, useMemo } from "react";
 
 /**
  * PlayerDetails — popup modal showing per-practice scoring for a player
@@ -21,9 +20,7 @@ import PracticeDetails from "./PracticeDetails";
  * />
  */
 
-export default function PlayerDetails({ open, onClose, player, practices = [], rankings }) {
-  const [selectedPractice, setSelectedPractice] = useState(null);
-  const [showPracticeDetails, setShowPracticeDetails] = useState(false);
+export default function PlayerDetails({ open, onClose, player, practices = [], rankings, setSelectedPractice }) {
   // Close on ESC
   useEffect(() => {
     if (!open) return;
@@ -108,10 +105,7 @@ export default function PlayerDetails({ open, onClose, player, practices = [], r
               </thead>
               <tbody>
                 {rows.map((r) => (
-                  <tr className="row" key={r.date} onClick={() => {
-                    setSelectedPractice(r.date); 
-                    setShowPracticeDetails(true)
-                    }}>
+                  <tr className="row" key={r.date} onClick={() => setSelectedPractice(r.date)}>
                     <TD>{r.date}</TD>
                     <TD >{r.scores}</TD>
                     <TD >{r.reps}</TD>
@@ -123,13 +117,6 @@ export default function PlayerDetails({ open, onClose, player, practices = [], r
           </div>
         )}
       </div>
-
-      <PracticeDetails
-        open={showPracticeDetails}
-        onClose={() => setShowPracticeDetails(false)}
-        practiceDate={selectedPractice}
-        rankings={rankings}
-      />
     </div>
   );
 }

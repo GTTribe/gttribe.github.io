@@ -14,7 +14,7 @@ import React, { useEffect, useMemo, useState } from "react";
  * - Renders a table with one row per team: Team, Players, Scores, Reps, Rate.
  */
 
-export default function PracticeDetails({ open, onClose, practiceDate, rankings }) {
+export default function PracticeDetails({ open, onClose, practiceDate, rankings, setSelectedPlayer, setSelectedPractice }) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -107,7 +107,7 @@ export default function PracticeDetails({ open, onClose, practiceDate, rankings 
                           <span style={{ color: "#888" }}>—</span>
                         ) : (
                           r.roster.map((p) => (
-                            <span key={p} style={pill}>{p} ({rankings[p]})</span>
+                            <div className="player-pill" onClick={() => {setSelectedPlayer(p); setSelectedPractice(null)}} key={p} style={pill}>{p} ({rankings[p]})</div>
                           ))
                         )}
                       </div>

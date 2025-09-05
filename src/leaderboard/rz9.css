@@ -4,3 +4,11 @@
 .row:hover {
     outline: 1px solid #999
 }
+
+.player-pill {
+    cursor: pointer;
+}
+
+.player-pill:hover {
+    outline: 1px solid black;
+}

@@ -9,6 +9,7 @@ import {
     getPlayerRankings
  } from "./rz9Utils";
  import PlayerDetails from "./PlayerDetails";
+import PracticeDetails from "./PracticeDetails";
 
 
 export default function Leaderboard() {
@@ -17,7 +18,7 @@ export default function Leaderboard() {
   const [loading, setLoading] = useState(true);
 
   const [selectedPlayer, setSelectedPlayer] = useState(null);
-  const [showPlayerDetails, setShowPlayerDetails] = useState(false);
+  const [selectedPractice, setSelectedPractice] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -74,7 +75,7 @@ export default function Leaderboard() {
   return (
     <div style={{ maxWidth: 900, margin: "40px auto", padding: "0 16px" }}>
       <header style={{ marginBottom: 16 }}>
-        <h1 style={{ margin: 0 }}>Rankings · Red Zone 9s</h1>
+        <h1 style={{ margin: 0 }}>Tribe 2025 · Red Zone 9s</h1>
         <div style={{ color: "#555", marginTop: 4 }}>
           Practices loaded: <strong>{practices.length}</strong> · Last update: <strong>{lastDate}</strong>
         </div>
@@ -107,7 +108,7 @@ export default function Leaderboard() {
             </thead>
             <tbody>
               {leaderboard.map((row, idx) => (
-                <tr className="row" key={row.player} onClick={() => {setSelectedPlayer(row.player); setShowPlayerDetails(true)}} style={idx % 2 === 1 ? { background: "#fafafa" } : undefined}>
+                <tr className="row" key={row.player} onClick={() => {setSelectedPlayer(row.player); console.log(practices)}} style={idx % 2 === 1 ? { background: "#fafafa" } : undefined}>
                   <TD >{idx === 0 ? "🥇" : (idx === 1 ? "🥈" : (idx === 2 ? "🥉" : idx + 1))}</TD>
                   <TD>{row.player}</TD>
                   <TD >{row.scored}</TD>
@@ -127,11 +128,20 @@ export default function Leaderboard() {
         </p>
       </footer>
       <PlayerDetails
-        open={showPlayerDetails && !!selectedPlayer}
-        onClose={() => setShowPlayerDetails(false)}
+        open={!!selectedPlayer}
+        onClose={() => setSelectedPlayer(null)}
         player={selectedPlayer}
         practices={practices}
         rankings={rankings}
+        setSelectedPractice={setSelectedPractice}
+      />
+      <PracticeDetails
+        open={!!selectedPractice}
+        onClose={() => setSelectedPractice(null)}
+        practiceDate={selectedPractice}
+        rankings={rankings}
+        setSelectedPlayer={setSelectedPlayer}
+        setSelectedPractice={setSelectedPractice}
       />
     </div>
   );
