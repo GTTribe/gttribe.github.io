@@ -114,7 +114,7 @@ export default function Leaderboard() {
                   <TD >{row.scored}</TD>
                   <TD >{row.reps}</TD>
                   <TD ><strong>{formatPct(row.pct)}</strong></TD>
-                  <TD >{row.rating}</TD>
+                  <TD >{Math.round(row.rating)}</TD>
                 </tr>
               ))}
             </tbody>

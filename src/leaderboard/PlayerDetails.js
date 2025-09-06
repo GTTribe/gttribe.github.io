@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo } from "react";
+import { computePlayerRating } from "./rz9Utils";
 
 /**
  * PlayerDetails — popup modal showing per-practice scoring for a player
@@ -84,7 +85,8 @@ export default function PlayerDetails({ open, onClose, player, practices = [], r
           <div>
             <h2 style={{ margin: 0 }}>{player || "Player"}</h2>
             <div style={{ color: "#666", marginTop: 4 }}>
-              Practices: <strong>{rows.length}</strong> · Overall: <strong>{totals.scores}</strong> / <strong>{totals.reps}</strong> ({formatPct(totals.pct)}) · Current Rank: <strong>{rankings[player]}</strong> 
+              Practices: <strong>{rows.length}</strong> · Overall: <strong>{totals.scores}</strong> / <strong>{totals.reps}</strong> ({formatPct(totals.pct)}) 
+              · Current Rank: <strong>{rankings[player]}</strong> · Current Rating: <strong>{Math.round(computePlayerRating(rows))}</strong> 
             </div>
           </div>
           <button type="button" onClick={onClose} style={closeBtn} aria-label="Close">×</button>

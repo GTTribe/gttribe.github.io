@@ -1,3 +1,6 @@
+const NEUTRAL = 0.722222
+const k = 200
+
 export async function fetchManifest() {
   const res = await fetch("/rz9_data/manifest.json", { cache: "no-store" });
   if (!res.ok) throw new Error(`Manifest load failed: ${res.status}`);
@@ -11,15 +14,25 @@ export async function fetchPractice(filename) {
 }
 
 
+
+function expectedPct(R, { mu = 1000, width = 400, neutral = NEUTRAL } = {}) {
+  // clamp neutral to (0,1) to avoid infinities
+  const nz = Math.min(0.999999, Math.max(0.000001, neutral));
+  const bias = Math.log10(nz / (1 - nz));            // E(mu) = neutral
+  const expo = -((R - mu) / width + bias);           // critical parens
+  return 1 / (1 + Math.pow(10, expo));
+}
+
 export function computePlayerRating(
   entries,
   {
     initial = 1000,     // starting rating
-    K = 60,             // update size
+    K = k,             // update size
     halfLifeDays = 28,  // time decay: weight halves every H days
     mu = 1000,          // league-average anchor
     width = 400,        // Elo width (bigger = flatter curve)
     today = new Date(), // for age calculation
+    neutral = NEUTRAL,  // define NEUTRAL elsewhere (e.g., 0.5 or 0.6)
   } = {}
 ) {
   const MS_DAY = 86400000;
@@ -29,18 +42,21 @@ export function computePlayerRating(
     return Number.isFinite(y) ? Date.UTC(y, (m || 1) - 1, d || 1) : NaN;
   };
 
-  const floorUTC = (d) => Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+  const floorUTC = (d) => {
+    const dt = (d instanceof Date) ? d : new Date(d);
+    return Date.UTC(dt.getUTCFullYear(), dt.getUTCMonth(), dt.getUTCDate());
+  };
+
   const todayUTC = floorUTC(today);
 
-
-  const sorted = [...(entries || [])].filter(Boolean).sort((a, b) =>
-    (a.date || "").localeCompare(b.date || "")
-  );
+  const sorted = [...(entries || [])]
+    .filter(Boolean)
+    .sort((a, b) => (a.date || "").localeCompare(b.date || ""));
 
   let R = initial;
 
   for (const e of sorted) {
-    const r = Math.min(1, Math.max(0, Number(e.rate))); // clamp
+    const r = Math.min(1, Math.max(0, Number(e.pct))); // clamp
     if (!Number.isFinite(r)) continue;
 
     const when = toUTC(e.date);
@@ -49,14 +65,13 @@ export function computePlayerRating(
     const ageDays = Math.max(0, Math.floor((todayUTC - when) / MS_DAY));
     const decay = halfLifeDays > 0 ? Math.pow(0.5, ageDays / halfLifeDays) : 1;
 
-    // Expected scoring rate from current rating
-    const expected = 1 / (1 + Math.pow(10, -(R - mu) / width));
+    const expected = expectedPct(R, { mu, width, neutral });
 
     // Incremental Elo-style update (uncapped)
     R = R + K * decay * (r - expected);
   }
 
-  return Math.round(R);
+  return R;
 }
 
 export function aggregatePlayerStats(practices) {
@@ -81,7 +96,7 @@ export function aggregatePlayerStats(practices) {
         const cur = playerMap.get(player);
         cur.scored += scores;
         cur.reps += reps;
-        cur.practices.push({date: p.date, rate: scores / reps })
+        cur.practices.push({date: p.date, pct: scores / reps })
       }
     }
   }
@@ -97,8 +112,9 @@ export function toLeaderboard(playerMap) {
     rows.push({ player, scored, reps, pct, rating });
   }
   rows.sort((a, b) => {
+    if (b.rating !== a.rating) return b.rating - a.rating;
     if (b.pct !== a.pct) return b.pct - a.pct;
-    if (b.reps !== a.reps) return b.reps - a.reps;
+    if (b.reps !== a.reps) return a.reps - a.reps;
     return a.player.localeCompare(b.player);
   });
   return rows;
