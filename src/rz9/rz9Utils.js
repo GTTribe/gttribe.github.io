@@ -1,4 +1,9 @@
-const NEUTRAL = 0.722222
+const NEUTRAL = 0.6666667
+const INITIAL = 1000
+const MU = 1000
+const HALF_LIFE = 21
+const WIDTH = 10000
+const TODAY = new Date()
 const k = 200
 
 export async function fetchManifest() {
@@ -15,7 +20,7 @@ export async function fetchPractice(filename) {
 
 
 
-function expectedPct(R, { mu = 1000, width = 400, neutral = NEUTRAL } = {}) {
+function expectedPct(R, { mu = MU, width = WIDTH, neutral = NEUTRAL } = {}) {
   // clamp neutral to (0,1) to avoid infinities
   const nz = Math.min(0.999999, Math.max(0.000001, neutral));
   const bias = Math.log10(nz / (1 - nz));            // E(mu) = neutral
@@ -26,12 +31,12 @@ function expectedPct(R, { mu = 1000, width = 400, neutral = NEUTRAL } = {}) {
 export function computePlayerRating(
   entries,
   {
-    initial = 1000,     // starting rating
+    initial = INITIAL,     // starting rating
     K = k,             // update size
-    halfLifeDays = 28,  // time decay: weight halves every H days
-    mu = 1000,          // league-average anchor
-    width = 400,        // Elo width (bigger = flatter curve)
-    today = new Date(), // for age calculation
+    halfLifeDays = HALF_LIFE,  // time decay: weight halves every H days
+    mu = MU,          // league-average anchor
+    width = WIDTH,        // Elo width (bigger = flatter curve)
+    today = TODAY, // for age calculation
     neutral = NEUTRAL,  // define NEUTRAL elsewhere (e.g., 0.5 or 0.6)
   } = {}
 ) {

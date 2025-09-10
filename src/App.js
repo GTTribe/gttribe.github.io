@@ -1,8 +1,8 @@
 import './App.css';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
-import Leaderboard from './leaderboard/Leaderboard';
-import Generate from './leaderboard/Generate';
+import Leaderboard from './rz9/Leaderboard';
+import Generate from './rz9/Generate';
 
 function App() {
   return (
