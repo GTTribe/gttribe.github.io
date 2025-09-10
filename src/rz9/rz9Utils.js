@@ -1,10 +1,10 @@
-const NEUTRAL = 0.6666667
-const INITIAL = 1000
-const MU = 1000
-const HALF_LIFE = 21
-const WIDTH = 10000
-const TODAY = new Date()
-const k = 200
+export const NEUTRAL = 0.667
+export const INITIAL = 1000
+export const MU = 1000
+export const HALF_LIFE = 21
+export const WIDTH = 10000
+export const TODAY = new Date()
+export const STEP = 200
 
 export async function fetchManifest() {
   const res = await fetch("/rz9_data/manifest.json", { cache: "no-store" });
@@ -32,7 +32,7 @@ export function computePlayerRating(
   entries,
   {
     initial = INITIAL,     // starting rating
-    K = k,             // update size
+    K = STEP,             // update size
     halfLifeDays = HALF_LIFE,  // time decay: weight halves every H days
     mu = MU,          // league-average anchor
     width = WIDTH,        // Elo width (bigger = flatter curve)

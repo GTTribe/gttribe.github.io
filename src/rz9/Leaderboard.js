@@ -10,6 +10,7 @@ import {
  } from "./rz9Utils";
  import PlayerDetails from "./PlayerDetails";
 import PracticeDetails from "./PracticeDetails";
+import Explanation from "./Explanation";
 
 
 export default function Leaderboard() {
@@ -121,10 +122,10 @@ export default function Leaderboard() {
           </table>
         </div>
       )}
-
+      <Explanation />
       <footer style={{ marginTop: 16, color: "#666", fontSize: 14 }}>
         <p>
-          Note: This is a very simple calculation that attributes team totals to all players at that practice. Rate is not calculated on a per-player basis.
+          Note: This is a very simple calculation that attributes team scoring rates to all players on that team. Rate is not calculated on a per-player basis.
         </p>
       </footer>
       <PlayerDetails
