@@ -1,0 +1,42 @@
+{
+  "date": "2025-09-09",
+  "teams": [
+    {
+      "team_id": "A",
+      "roster": [
+        "Adam Grossberg",
+        "Ephraim Connor",
+        "Ethan Austin-Cruse",
+        "Ganden Fung",
+        "Jackson Armstrong",
+        "John Davis",
+        "Matthew Greenberg",
+        "Stefan McCall"
+      ]
+    },
+    {
+      "team_id": "B",
+      "roster": [
+        "Adithya Deepak",
+        "Connor Case",
+        "Grover Grendzinski",
+        "Jedidiah Cheng",
+        "Neal Zeng",
+        "Owen Hammond-Lee",
+        "Piss"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "team_id": "A",
+      "reps": 12,
+      "scores": 8
+    },
+    {
+      "team_id": "B",
+      "reps": 12,
+      "scores": 9
+    }
+  ]
+}
