@@ -110,7 +110,7 @@ export default function Leaderboard() {
             <tbody>
               {leaderboard.map((row, idx) => (
                 <tr className="row" key={row.player} onClick={() => {setSelectedPlayer(row.player); console.log(practices)}} style={idx % 2 === 1 ? { background: "#fafafa" } : undefined}>
-                  <TD >{idx === 0 ? "🥇" : (idx === 1 ? "🥈" : (idx === 2 ? "🥉" : idx + 1))}</TD>
+                  <TD >{idx === 0 ? "🥇" : (idx === 1 ? "🥈" : (idx === 2 ? "🥉" : (idx === leaderboard.length - 1) ? "💩" : idx + 1))}</TD>
                   <TD>{row.player}</TD>
                   <TD >{row.scored}</TD>
                   <TD >{row.reps}</TD>

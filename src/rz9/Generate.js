@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { PLAYERS } from "./rz9Utils";
 
 /**
  * Generate.js — Build a per-practice JSON for Red Zone 9s
@@ -13,35 +14,6 @@ import React, { useEffect, useMemo, useState } from "react";
  * - We auto-assign team_id letters: A, B, C, ...
  */
 
-// Roster
-const PLAYERS = [
-  "Adam Grossberg",
-  "Adithya Deepak",
-  "Camilo Castrillon",
-  "Connor Case",
-  "David Baker",
-  "Dhruvsai Dhulipudi",
-  "Edan Avissar",
-  "Ephraim Connor",
-  "Ethan Austin-Cruse",
-  "Flavius Penescu",
-  "Ganden Fung",
-  "Grover Grendzinski",
-  "Ivan Sanchez",
-  "Jackson Armstrong",
-  "Jedidiah Cheng",
-  "John Davis",
-  "Keller Smith",
-  "Matthew Greenberg",
-  "Neal Zeng",
-  "Nikos Verlenden",
-  "Owen Hammond-Lee",
-  "Philip Emry",
-  "Piss",
-  "Sam Granade",
-  "Sam Grossberg",
-  "Stefan McCall"
-];
 
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 

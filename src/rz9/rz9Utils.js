@@ -3,8 +3,38 @@ export const INITIAL = 1000
 export const MU = 1000
 export const HALF_LIFE = 21
 export const WIDTH = 10000
-export const TODAY = new Date()
 export const STEP = 200
+
+const TODAY = new Date()
+
+export const PLAYERS = [
+  "Adam Grossberg",
+  "Adithya Deepak",
+  "Camilo Castrillon",
+  "Connor Case",
+  "David Baker",
+  "Dhruvsai Dhulipudi",
+  "Edan Avissar",
+  "Ephraim Connor",
+  "Ethan Austin-Cruse",
+  "Flavius Penescu",
+  "Ganden Fung",
+  "Grover Grendzinski",
+  "Ivan Sanchez",
+  "Jackson Armstrong",
+  "Jedidiah Cheng",
+  "John Davis",
+  "Keller Smith",
+  "Matthew Greenberg",
+  "Neal Zeng",
+  "Nikos Verlenden",
+  "Owen Hammond-Lee",
+  "Philip Emry",
+  "Piss",
+  "Sam Granade",
+  "Sam Grossberg",
+  "Stefan McCall"
+];
 
 export async function fetchManifest() {
   const res = await fetch("/rz9_data/manifest.json", { cache: "no-store" });
@@ -111,10 +141,12 @@ export function aggregatePlayerStats(practices) {
 
 export function toLeaderboard(playerMap) {
   const rows = [];
+  const usedPlayers = [];
   for (const [player, { scored, reps, practices }] of playerMap.entries()) {
     const pct = reps > 0 ? scored / reps : 0;
     const rating = computePlayerRating(practices);
     rows.push({ player, scored, reps, pct, rating });
+    usedPlayers.push
   }
   rows.sort((a, b) => {
     if (b.rating !== a.rating) return b.rating - a.rating;
@@ -122,6 +154,7 @@ export function toLeaderboard(playerMap) {
     if (b.reps !== a.reps) return a.reps - a.reps;
     return a.player.localeCompare(b.player);
   });
+
   return rows;
 }
 
