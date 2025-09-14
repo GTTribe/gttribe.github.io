@@ -146,7 +146,6 @@ export function toLeaderboard(playerMap) {
     const pct = reps > 0 ? scored / reps : 0;
     const rating = computePlayerRating(practices);
     rows.push({ player, scored, reps, pct, rating });
-    usedPlayers.push
   }
   rows.sort((a, b) => {
     if (b.rating !== a.rating) return b.rating - a.rating;
