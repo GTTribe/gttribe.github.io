@@ -1,4 +1,4 @@
-export const NEUTRAL = 0.667
+export const NEUTRAL = 0.555
 export const INITIAL = 1000
 export const MU = 1000
 export const HALF_LIFE = 21
