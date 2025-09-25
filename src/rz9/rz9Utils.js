@@ -14,7 +14,6 @@ export const PLAYERS = [
   "Connor Case",
   "David Baker",
   "Dhruvsai Dhulipudi",
-  "Edan Avissar",
   "Ephraim Connor",
   "Ethan Austin-Cruse",
   "Flavius Penescu",
