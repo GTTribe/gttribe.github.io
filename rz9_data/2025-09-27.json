@@ -35,8 +35,8 @@
     },
     {
       "team_id": "B",
-      "reps": 0,
-      "scores": 0
+      "reps": 10,
+      "scores": 7
     }
   ]
 }
