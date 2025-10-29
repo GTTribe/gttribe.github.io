@@ -1,0 +1,48 @@
+{
+  "date": "2025-10-28",
+  "teams": [
+    {
+      "team_id": "A",
+      "roster": [
+        "Adam Grossberg",
+        "Dhruvsai Dhulipudi",
+        "Flavius Penescu",
+        "Ganden Fung",
+        "Grover Grendzinski",
+        "Ivan Sanchez",
+        "Jedidiah Cheng",
+        "Keller Smith",
+        "Owen Hammond-Lee",
+        "Sam Grossberg",
+        "Stefan McCall"
+      ]
+    },
+    {
+      "team_id": "B",
+      "roster": [
+        "Adithya Deepak",
+        "Camilo Castrillon",
+        "Connor Case",
+        "Ephraim Connor",
+        "Ethan Austin-Cruse",
+        "John Davis",
+        "Matthew Greenberg",
+        "Neal Zeng",
+        "Philip Emry",
+        "Sam Granade"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "team_id": "A",
+      "reps": 9,
+      "scores": 5
+    },
+    {
+      "team_id": "B",
+      "reps": 9,
+      "scores": 5
+    }
+  ]
+}
